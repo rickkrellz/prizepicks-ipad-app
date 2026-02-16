@@ -11,43 +11,24 @@ permissions:
 jobs:
   fetch-data:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install requests
+        run: pip install requests
         
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests pandas
+      - name: Run fetcher
+        run: python github_actions_fetcher.py
         
-    - name: List files before
-      run: ls -la
-        
-    - name: Fetch PrizePicks data
-      run: python github_actions_fetcher.py
-      
-    - name: List files after
-      run: ls -la
-        
-    - name: Check for changes
-      id: git-check
-      run: |
-        git add prizepicks_*_latest.json
-        git diff --staged --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
-        
-    - name: Commit and push if changes
-      if: steps.git-check.outputs.changed == 'true'
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git commit -m "Auto-update PrizePicks data [skip ci]"
-        git push
-        
-    - name: Show final status
-      run: echo "Workflow completed!"
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update PrizePicks data"
+          git push
