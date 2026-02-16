@@ -2,9 +2,12 @@ name: Fetch PrizePicks Data
 
 on:
   schedule:
-    # Run every 2 hours from 8 AM to 11 PM Central Time
-    - cron: '0 */2 8-23 * *'
-  workflow_dispatch:  # Allow manual trigger from GitHub
+    # Run every 2 hours
+    - cron: '0 */2 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write  # Give the workflow permission to write to the repo
 
 jobs:
   fetch-data:
@@ -12,10 +15,10 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.11'
         
@@ -25,11 +28,17 @@ jobs:
         
     - name: Fetch PrizePicks data
       run: python github_actions_fetcher.py
+      
+    - name: Check for changes
+      id: git-check
+      run: |
+        git add prizepicks_*_latest.json
+        git diff --staged --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
         
     - name: Commit and push if changes
+      if: steps.git-check.outputs.changed == 'true'
       run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'actions@github.com'
-        git add prizepicks_*_latest.json
-        git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update PrizePicks data"
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git commit -m "Auto-update PrizePicks data [skip ci]"
         git push
