@@ -1,6 +1,6 @@
 """
 Local Fetcher - Runs on your computer to get real PrizePicks data
-Based on your working test_api.py
+Includes team information
 """
 
 import requests
@@ -40,13 +40,23 @@ def fetch_sport(sport_name, league_id):
             
         data = response.json()
         
-        # Create player lookup dictionary
+        # Create lookup dictionaries
         players = {}
-        for item in data.get('included', []):
-            if item.get('type') == 'new_player':
-                players[item['id']] = item['attributes']['name']
+        teams = {}
         
-        print(f"Found {len(players)} players")
+        for item in data.get('included', []):
+            item_type = item.get('type')
+            attributes = item.get('attributes', {})
+            
+            if item_type == 'new_player':
+                players[item['id']] = {
+                    'name': attributes.get('name', 'Unknown'),
+                    'team_id': attributes.get('team_id')
+                }
+            elif item_type == 'team':
+                teams[item['id']] = attributes.get('name', 'Unknown')
+        
+        print(f"Found {len(players)} players, {len(teams)} teams")
         
         # Parse props
         props = []
@@ -54,8 +64,13 @@ def fetch_sport(sport_name, league_id):
             attrs = item.get('attributes', {})
             relationships = item.get('relationships', {})
             
-            player_id = relationships.get('new_player', {}).get('data', {}).get('id')
-            player_name = players.get(player_id, 'Unknown')
+            player_data = relationships.get('new_player', {}).get('data', {})
+            player_id = player_data.get('id')
+            player_info = players.get(player_id, {})
+            player_name = player_info.get('name', 'Unknown')
+            team_id = player_info.get('team_id')
+            team_name = teams.get(team_id, 'Unknown')
+            
             line_score = attrs.get('line_score')
             stat_type = attrs.get('stat_type', 'Unknown')
             
@@ -65,6 +80,7 @@ def fetch_sport(sport_name, league_id):
                         'player': player_name,
                         'line': float(line_score),
                         'stat_type': stat_type,
+                        'team': team_name,
                         'sport': sport_name,
                         'fetched_at': datetime.now().isoformat()
                     })
@@ -161,7 +177,7 @@ def test_git_connection():
 def main():
     """Main function"""
     print("=" * 60)
-    print("🎯 PrizePicks Local Data Fetcher")
+    print("🎯 PrizePicks Local Data Fetcher (with Teams)")
     print(f"📅 Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
     
