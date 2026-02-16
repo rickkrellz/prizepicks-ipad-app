@@ -1,6 +1,6 @@
 """
 Main PrizePicks +EV Optimizer App
-iPad-Optimized Version - Fixed parlay display
+iPad-Optimized Version - Fixed to show all props correctly
 """
 
 import streamlit as st
@@ -370,35 +370,40 @@ if analyze_clicked:
         positive_ev = ev_data[ev_data['is_positive']].copy()
         positive_ev = positive_ev[positive_ev['ev'] >= min_ev]
         
-        # Remove duplicates (same player with same stat type)
-        if not positive_ev.empty:
-            positive_ev = positive_ev.drop_duplicates(subset=['player', 'stat_type'], keep='first')
+        # Keep a copy for display (all props, no deduplication)
+        display_positive_ev = positive_ev.copy()
         
         # Check if we have enough picks
         if len(positive_ev) < num_legs:
-            st.warning(f"⚠️ Only {len(positive_ev)} picks meet your {min_ev:.0%} EV threshold. Showing best available.")
-            # Get best available but remove duplicates
+            st.warning(f"⚠️ Only {len(positive_ev)} props meet your {min_ev:.0%} EV threshold. Showing best available.")
+            # Get best available
             positive_ev = ev_data.nlargest(num_legs * 2, 'ev')
-            positive_ev = positive_ev.drop_duplicates(subset=['player', 'stat_type'], keep='first')
+            display_positive_ev = positive_ev.copy()
         
-        # Select top picks (exactly num_legs picks)
-        selected_picks = positive_ev.head(num_legs).copy()
-        
-        # Final duplicate check - ensure we have exactly num_legs unique players
-        if len(selected_picks) > selected_picks['player'].nunique():
-            st.info(f"⚠️ Removing duplicate players to create optimal {num_legs}-leg parlay...")
-            # Keep highest EV for each player
-            selected_picks = positive_ev.sort_values('ev', ascending=False).drop_duplicates(subset=['player'], keep='first').head(num_legs)
+        # For parlay, we want unique players with highest EV
+        # First, get best EV for each player
+        if not positive_ev.empty:
+            unique_player_picks = positive_ev.sort_values('ev', ascending=False).drop_duplicates(subset=['player'], keep='first')
+            # Then take top num_legs
+            selected_picks = unique_player_picks.head(num_legs).copy()
+        else:
+            selected_picks = pd.DataFrame()
         
         progress_bar.progress(90, text="Analyzing correlations...")
         
         # Calculate correlation penalty
-        penalty = calculate_correlation_penalty(selected_picks)
-        warning = get_correlation_warning(selected_picks)
+        penalty = 1.0
+        warning = None
+        if not selected_picks.empty and len(selected_picks) >= 2:
+            penalty = calculate_correlation_penalty(selected_picks)
+            warning = get_correlation_warning(selected_picks)
         
         # Calculate probabilities
-        raw_prob = calculate_parlay_probability(selected_picks)
-        adjusted_prob = raw_prob * penalty
+        raw_prob = 0
+        adjusted_prob = 0
+        if not selected_picks.empty:
+            raw_prob = calculate_parlay_probability(selected_picks)
+            adjusted_prob = raw_prob * penalty
         
         progress_bar.progress(100, text="Done!")
         progress_bar.empty()
@@ -409,49 +414,57 @@ if analyze_clicked:
         st.divider()
         
         # Success message with count of real props
-        st.success(f"✅ Found {len(positive_ev)} profitable picks from {len(pp_data)} total PrizePicks props!")
-        st.caption(f"🎯 Showing top {len(selected_picks)} picks for your {num_legs}-leg parlay")
+        st.success(f"✅ Found {len(display_positive_ev)} profitable props from {len(pp_data)} total PrizePicks props!")
+        
+        if not selected_picks.empty:
+            st.caption(f"🎯 Showing top {len(selected_picks)} unique players for your {num_legs}-leg parlay")
         
         # METRICS ROW
         col1, col2 = st.columns(2)
         
         with col1:
-            avg_ev = selected_picks['ev'].mean()
-            st.metric(
-                "Average EV",
-                f"{avg_ev:.1%}",
-                help="Average expected value of your picks"
-            )
+            if not selected_picks.empty:
+                avg_ev = selected_picks['ev'].mean()
+                st.metric(
+                    "Average EV",
+                    f"{avg_ev:.1%}",
+                    help="Average expected value of your picks"
+                )
+            else:
+                st.metric("Average EV", "N/A")
         
         with col2:
-            st.metric(
-                "Win Probability",
-                f"{adjusted_prob:.1%}",
-                delta=f"{raw_prob:.1%} raw",
-                help="Adjusted for correlations"
-            )
+            if not selected_picks.empty:
+                st.metric(
+                    "Win Probability",
+                    f"{adjusted_prob:.1%}",
+                    delta=f"{raw_prob:.1%} raw",
+                    help="Adjusted for correlations"
+                )
+            else:
+                st.metric("Win Probability", "N/A")
         
         # ============================================
-        # SELECTED PICKS TABLE - FIXED VERSION
+        # SELECTED PICKS TABLE - FIXED
         # ============================================
         st.subheader(f"🎯 Your Optimal {num_legs}-Leg Parlay")
         
-        # Create a clean dataframe for display
-        parlay_data = []
-        for idx, pick in selected_picks.iterrows():
-            parlay_data.append({
-                'Player': pick['player'],
-                'Stat': pick['stat_type'],
-                'Line': pick['line'],
-                'Pick': pick['direction'],
-                'EV': f"{pick['ev']:.1%}"
-            })
-        
-        # Convert to DataFrame
-        parlay_df = pd.DataFrame(parlay_data)
-        
-        # Show the table with all rows
-        if not parlay_df.empty:
+        if not selected_picks.empty:
+            # Create a clean dataframe for display
+            parlay_data = []
+            for idx, pick in selected_picks.iterrows():
+                parlay_data.append({
+                    'Player': pick['player'],
+                    'Stat': pick['stat_type'],
+                    'Line': pick['line'],
+                    'Pick': pick['direction'],
+                    'EV': f"{pick['ev']:.1%}"
+                })
+            
+            # Convert to DataFrame
+            parlay_df = pd.DataFrame(parlay_data)
+            
+            # Show the table with all rows
             st.dataframe(
                 parlay_df,
                 use_container_width=True,
@@ -466,7 +479,7 @@ if analyze_clicked:
             )
             
             # Show the count
-            st.caption(f"✅ Showing {len(parlay_df)} of {len(positive_ev)} profitable picks")
+            st.caption(f"✅ Showing {len(parlay_df)} unique players with highest EV")
         else:
             st.warning("No picks available to display")
         
@@ -476,66 +489,76 @@ if analyze_clicked:
         
         # CORRELATION EXPLANATION
         with st.expander("📊 Correlation Analysis"):
-            st.markdown(f"""
-            **Correlation Penalty Factor:** `{penalty:.2f}`
-            
-            - **Penalty < 1.0** = Negative correlation (reduces chance)
-            - **Penalty > 1.0** = Positive correlation (helps)
-            
-            Your picks have a penalty of {penalty:.2f}, which means your actual
-            probability is {adjusted_prob:.1%} vs the raw {raw_prob:.1%}.
-            
-            **Why this matters:**
-            - Same-team players tend to negatively correlate
-            - Different games/teams are usually independent
-            - Avoid stacking players from the same team
-            """)
+            if not selected_picks.empty and len(selected_picks) >= 2:
+                st.markdown(f"""
+                **Correlation Penalty Factor:** `{penalty:.2f}`
+                
+                - **Penalty < 1.0** = Negative correlation (reduces chance)
+                - **Penalty > 1.0** = Positive correlation (helps)
+                
+                Your picks have a penalty of {penalty:.2f}, which means your actual
+                probability is {adjusted_prob:.1%} vs the raw {raw_prob:.1%}.
+                
+                **Why this matters:**
+                - Same-team players tend to negatively correlate
+                - Different games/teams are usually independent
+                - Avoid stacking players from the same team
+                """)
+            else:
+                st.info("Not enough picks for correlation analysis")
         
         # EV DISTRIBUTION CHART
         st.subheader("📊 Top Expected Value Picks")
         
-        # Prepare data for chart (show top 15)
-        chart_data = positive_ev.head(15).copy()
-        chart_data = chart_data.drop_duplicates(subset=['player'], keep='first')
-        chart_data['player_short'] = chart_data['player'].apply(
-            lambda x: x.split()[-1] if len(x.split()) > 1 else x
-        )
-        
-        # Create bar chart
-        fig = px.bar(
-            chart_data,
-            x='player_short',
-            y='ev',
-            color='ev',
-            color_continuous_scale='RdYlGn',
-            title=f"Top 15 Picks by EV - {selected_sport}",
-            labels={'ev': 'Expected Value', 'player_short': 'Player'}
-        )
-        
-        fig.update_layout(
-            xaxis_tickangle=-45,
-            height=400,
-            margin=dict(l=20, r=20, t=40, b=80),
-            plot_bgcolor='rgba(0,0,0,0)',
-            paper_bgcolor='rgba(0,0,0,0)',
-            yaxis_tickformat='.0%'
-        )
-
-        st.plotly_chart(fig, use_container_width=True)
-
-        # MARKET COMPARISON TABLE
-        with st.expander("📈 View All Profitable Props"):
-            # Show all props with EV
-            all_display = positive_ev[['player', 'stat_type', 'line', 'direction', 'ev']].copy()
-            all_display['ev'] = all_display['ev'].apply(lambda x: f"{x:.1%}")
-            all_display.columns = ['Player', 'Stat', 'Line', 'Pick', 'EV']
-            
-            st.dataframe(
-                all_display,
-                use_container_width=True,
-                height=400
+        # Prepare data for chart (show top 15 props)
+        if not display_positive_ev.empty:
+            chart_data = display_positive_ev.head(15).copy()
+            chart_data['player_short'] = chart_data['player'].apply(
+                lambda x: x.split()[-1] if len(x.split()) > 1 else x
             )
-            st.caption(f"📊 Total profitable picks: {len(positive_ev)}")
+            
+            # Create bar chart
+            fig = px.bar(
+                chart_data,
+                x='player_short',
+                y='ev',
+                color='ev',
+                color_continuous_scale='RdYlGn',
+                title=f"Top 15 Props by EV - {selected_sport}",
+                labels={'ev': 'Expected Value', 'player_short': 'Player'}
+            )
+            
+            fig.update_layout(
+                xaxis_tickangle=-45,
+                height=400,
+                margin=dict(l=20, r=20, t=40, b=80),
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                yaxis_tickformat='.0%'
+            )
+
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("No props to display in chart")
+
+        # ============================================
+        # VIEW ALL PROFITABLE PROPS - FIXED
+        # ============================================
+        with st.expander("📈 View All Profitable Props"):
+            if not display_positive_ev.empty:
+                # Show ALL profitable props without deduplication
+                all_display = display_positive_ev[['player', 'stat_type', 'line', 'direction', 'ev']].copy()
+                all_display['ev'] = all_display['ev'].apply(lambda x: f"{x:.1%}")
+                all_display.columns = ['Player', 'Stat', 'Line', 'Pick', 'EV']
+                
+                st.dataframe(
+                    all_display,
+                    use_container_width=True,
+                    height=400
+                )
+                st.caption(f"📊 Total profitable props: {len(display_positive_ev)}")
+            else:
+                st.info("No profitable props found")
         
         # ACTION BUTTONS
         st.divider()
