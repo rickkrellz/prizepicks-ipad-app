@@ -1,6 +1,6 @@
 """
 Main PrizePicks +EV Optimizer App
-iPad-Optimized Version - Updated to handle missing columns
+iPad-Optimized Version - Fixed parlay display
 """
 
 import streamlit as st
@@ -305,7 +305,7 @@ with st.spinner(f"Loading {selected_sport} preview..."):
         preview_df.columns = column_names
         
         # Show data source status
-        if len(preview_pp) > 100:  # Real data usually has many props
+        if len(preview_pp) > 100:
             preview_placeholder.success(f"✅ Showing {len(preview_pp)} real {selected_sport} props from PrizePicks")
         else:
             preview_placeholder.info(f"📊 Showing {len(preview_pp)} {selected_sport} props")
@@ -381,18 +381,14 @@ if analyze_clicked:
             positive_ev = ev_data.nlargest(num_legs * 2, 'ev')
             positive_ev = positive_ev.drop_duplicates(subset=['player', 'stat_type'], keep='first')
         
-        # Select top picks (ensure no duplicates)
+        # Select top picks (exactly num_legs picks)
         selected_picks = positive_ev.head(num_legs).copy()
         
-        # Final duplicate check
+        # Final duplicate check - ensure we have exactly num_legs unique players
         if len(selected_picks) > selected_picks['player'].nunique():
-            st.warning("⚠️ Removing duplicate players from selection...")
-            selected_picks = selected_picks.drop_duplicates(subset=['player'], keep='first')
-            # If we removed too many, get next best
-            if len(selected_picks) < num_legs:
-                remaining_needed = num_legs - len(selected_picks)
-                additional = positive_ev[~positive_ev['player'].isin(selected_picks['player'])].head(remaining_needed)
-                selected_picks = pd.concat([selected_picks, additional])
+            st.info(f"⚠️ Removing duplicate players to create optimal {num_legs}-leg parlay...")
+            # Keep highest EV for each player
+            selected_picks = positive_ev.sort_values('ev', ascending=False).drop_duplicates(subset=['player'], keep='first').head(num_legs)
         
         progress_bar.progress(90, text="Analyzing correlations...")
         
@@ -414,6 +410,7 @@ if analyze_clicked:
         
         # Success message with count of real props
         st.success(f"✅ Found {len(positive_ev)} profitable picks from {len(pp_data)} total PrizePicks props!")
+        st.caption(f"🎯 Showing top {len(selected_picks)} picks for your {num_legs}-leg parlay")
         
         # METRICS ROW
         col1, col2 = st.columns(2)
@@ -434,44 +431,44 @@ if analyze_clicked:
                 help="Adjusted for correlations"
             )
         
-        # SELECTED PICKS TABLE
-        st.subheader("🎯 Your Optimal Parlay")
+        # ============================================
+        # SELECTED PICKS TABLE - FIXED VERSION
+        # ============================================
+        st.subheader(f"🎯 Your Optimal {num_legs}-Leg Parlay")
         
-        # Format for display
-        display_df = selected_picks[['player', 'stat_type', 'line', 'direction', 'ev']].copy()
-        display_df['ev'] = display_df['ev'].apply(lambda x: f"{x:.1%}")
-        display_df.columns = ['Player', 'Stat', 'Line', 'Pick', 'EV']
+        # Create a clean dataframe for display
+        parlay_data = []
+        for idx, pick in selected_picks.iterrows():
+            parlay_data.append({
+                'Player': pick['player'],
+                'Stat': pick['stat_type'],
+                'Line': pick['line'],
+                'Pick': pick['direction'],
+                'EV': f"{pick['ev']:.1%}"
+            })
         
-        # Add a grade column
-        def get_grade(ev_str):
-            ev_val = float(ev_str.strip('%')) / 100
-            if ev_val >= 0.10:
-                return "A+"
-            elif ev_val >= 0.07:
-                return "A"
-            elif ev_val >= 0.05:
-                return "B"
-            elif ev_val >= 0.03:
-                return "C"
-            elif ev_val >= 0.01:
-                return "D"
-            else:
-                return "F"
+        # Convert to DataFrame
+        parlay_df = pd.DataFrame(parlay_data)
         
-        display_df['Grade'] = display_df['EV'].apply(get_grade)
-        
-        # Show the table
-        st.dataframe(
-            display_df,
-            use_container_width=True,
-            height=400,
-            column_config={
-                "Player": st.column_config.TextColumn("Player", width="large"),
-                "Pick": st.column_config.TextColumn("Pick", width="small"),
-                "EV": st.column_config.TextColumn("EV", width="small"),
-                "Grade": st.column_config.TextColumn("Grade", width="small"),
-            }
-        )
+        # Show the table with all rows
+        if not parlay_df.empty:
+            st.dataframe(
+                parlay_df,
+                use_container_width=True,
+                height=400,
+                column_config={
+                    "Player": st.column_config.TextColumn("Player", width="medium"),
+                    "Stat": st.column_config.TextColumn("Stat Type", width="medium"),
+                    "Line": st.column_config.NumberColumn("Line", width="small"),
+                    "Pick": st.column_config.TextColumn("Pick", width="small"),
+                    "EV": st.column_config.TextColumn("EV", width="small"),
+                }
+            )
+            
+            # Show the count
+            st.caption(f"✅ Showing {len(parlay_df)} of {len(positive_ev)} profitable picks")
+        else:
+            st.warning("No picks available to display")
         
         # Show warning if any
         if warning:
@@ -497,7 +494,7 @@ if analyze_clicked:
         # EV DISTRIBUTION CHART
         st.subheader("📊 Top Expected Value Picks")
         
-        # Prepare data for chart (remove duplicates for chart)
+        # Prepare data for chart (show top 15)
         chart_data = positive_ev.head(15).copy()
         chart_data = chart_data.drop_duplicates(subset=['player'], keep='first')
         chart_data['player_short'] = chart_data['player'].apply(
@@ -527,18 +524,18 @@ if analyze_clicked:
         st.plotly_chart(fig, use_container_width=True)
 
         # MARKET COMPARISON TABLE
-        with st.expander("📈 View All Props with EV"):
-            # Show all props with EV (remove duplicates for display)
-            all_display = ev_data[['player', 'stat_type', 'line', 'direction', 'ev', 'is_positive']].copy()
-            all_display = all_display.drop_duplicates(subset=['player', 'stat_type'], keep='first')
+        with st.expander("📈 View All Profitable Props"):
+            # Show all props with EV
+            all_display = positive_ev[['player', 'stat_type', 'line', 'direction', 'ev']].copy()
             all_display['ev'] = all_display['ev'].apply(lambda x: f"{x:.1%}")
-            all_display.columns = ['Player', 'Stat', 'Line', 'Rec. Pick', 'EV', '+EV']
+            all_display.columns = ['Player', 'Stat', 'Line', 'Pick', 'EV']
             
             st.dataframe(
                 all_display,
                 use_container_width=True,
                 height=400
             )
+            st.caption(f"📊 Total profitable picks: {len(positive_ev)}")
         
         # ACTION BUTTONS
         st.divider()
@@ -546,10 +543,8 @@ if analyze_clicked:
         
         col1, col2 = st.columns(2)
         with col1:
-            # Use markdown link instead of link_button
             st.markdown("[📱 Open PrizePicks](https://app.prizepicks.com/)")
         with col2:
-            # Use session state to trigger new analysis
             if st.button("🔄 New Analysis", use_container_width=True):
                 st.cache_data.clear()
                 st.rerun()
