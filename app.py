@@ -1,6 +1,6 @@
 """
 Main PrizePicks +EV Optimizer App
-iPad-Optimized Version - Fixed preview and duplicate detection
+iPad-Optimized Version - Updated to handle missing columns
 """
 
 import streamlit as st
@@ -180,16 +180,6 @@ st.markdown("""
         padding: 15px !important;
         font-size: 16px !important;
     }
-    
-    /* Debug panel styling */
-    .debug-info {
-        background-color: #f0f2f6;
-        border-radius: 10px;
-        padding: 10px;
-        margin: 10px 0px;
-        font-family: monospace;
-        font-size: 12px;
-    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -303,11 +293,19 @@ with st.spinner(f"Loading {selected_sport} preview..."):
     preview_pp, preview_market = load_data(selected_sport)
     
     if not preview_pp.empty:
-        preview_df = preview_pp[['player', 'line', 'stat_type', 'team']].head(10).copy()
-        preview_df.columns = ['Player', 'Line', 'Stat Type', 'Team']
+        # Determine which columns to display
+        display_columns = ['player', 'line', 'stat_type']
+        column_names = ['Player', 'Line', 'Stat Type']
+        
+        if 'team' in preview_pp.columns:
+            display_columns.append('team')
+            column_names.append('Team')
+        
+        preview_df = preview_pp[display_columns].head(10).copy()
+        preview_df.columns = column_names
         
         # Show data source status
-        if len(preview_pp) > 50:  # Real data usually has many props
+        if len(preview_pp) > 100:  # Real data usually has many props
             preview_placeholder.success(f"✅ Showing {len(preview_pp)} real {selected_sport} props from PrizePicks")
         else:
             preview_placeholder.info(f"📊 Showing {len(preview_pp)} {selected_sport} props")
