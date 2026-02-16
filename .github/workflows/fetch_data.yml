@@ -1,0 +1,35 @@
+name: Fetch PrizePicks Data
+
+on:
+  schedule:
+    # Run every 2 hours from 8 AM to 11 PM Central Time
+    - cron: '0 */2 8-23 * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests pandas
+        
+    - name: Fetch PrizePicks data
+      run: python github_actions_fetcher.py
+        
+    - name: Commit and push if changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add prizepicks_*_latest.json
+        git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update PrizePicks data"
+        git push
