@@ -1,6 +1,6 @@
 """
 Main PrizePicks +EV Optimizer App
-iPad-Optimized Version - Fixed to show all props correctly
+iPad-Optimized Version - FIXED INDENTATION
 """
 
 import streamlit as st
@@ -233,199 +233,199 @@ with st.sidebar:
     
     st.divider()
     
-# Dark mode toggle with better readability
-dark_mode = st.toggle("🌙 Dark Mode", value=False, help="Switch between light and dark theme")
-
-if dark_mode:
-    st.markdown("""
-    <style>
-        /* Dark mode colors - Improved contrast */
-        .stApp {
-            background-color: #0e1117;
-            color: #ffffff;
-        }
-        
-        .main > div {
-            background-color: #0e1117;
-        }
-        
-        /* Headers and text - Much brighter */
-        h1, h2, h3, h4, h5, h6 {
-            color: #ffffff !important;
-            font-weight: 600 !important;
-        }
-        
-        p, li, .stMarkdown, .stCaption {
-            color: #e0e0e0 !important;
-        }
-        
-        /* Sidebar specific - CRITICAL FIX */
-        section[data-testid="stSidebar"] {
-            background-color: #1a1f2c !important;
-        }
-        
-        section[data-testid="stSidebar"] .stMarkdown,
-        section[data-testid="stSidebar"] p,
-        section[data-testid="stSidebar"] li,
-        section[data-testid="stSidebar"] span,
-        section[data-testid="stSidebar"] label {
-            color: #ffffff !important;
-            font-weight: 500 !important;
-        }
-        
-        /* Sidebar headers */
-        section[data-testid="stSidebar"] h1,
-        section[data-testid="stSidebar"] h2,
-        section[data-testid="stSidebar"] h3 {
-            color: #ffffff !important;
-            border-bottom: 1px solid #3a4050;
-            padding-bottom: 8px;
-        }
-        
-        /* Metric cards */
-        div[data-testid="stMetric"] {
-            background: linear-gradient(135deg, #2d3440 0%, #1a1f2c 100%) !important;
-            border: 1px solid #3a4050 !important;
-            border-radius: 10px !important;
-        }
-        
-        div[data-testid="stMetric"] label,
-        div[data-testid="stMetric"] div {
-            color: #ffffff !important;
-        }
-        
-        /* DataFrames */
-        .stDataFrame {
-            background-color: #1a1f2c !important;
-        }
-        
-        .stDataFrame td, .stDataFrame th {
-            color: #ffffff !important;
-            background-color: #1a1f2c !important;
-            border-color: #3a4050 !important;
-        }
-        
-        /* Buttons */
-        .stButton > button {
-            background-color: #2d3440 !important;
-            color: #ffffff !important;
-            border: 1px solid #3a4050 !important;
-            font-weight: 600 !important;
-        }
-        
-        .stButton > button:hover {
-            background-color: #3a4050 !important;
-            border-color: #5a6270 !important;
-        }
-        
-        /* Select boxes */
-        .stSelectbox > div > div {
-            background-color: #2d3440 !important;
-            color: #ffffff !important;
-            border-color: #3a4050 !important;
-        }
-        
-        .stSelectbox label {
-            color: #ffffff !important;
-        }
-        
-        /* Sliders */
-        .stSlider label {
-            color: #ffffff !important;
-        }
-        
-        .stSlider div[data-baseweb="slider"] {
-            color: #ffffff !important;
-        }
-        
-        /* Expanders */
-        .streamlit-expanderHeader {
-            background-color: #1a1f2c !important;
-            color: #ffffff !important;
-            border: 1px solid #3a4050 !important;
-        }
-        
-        .streamlit-expanderContent {
-            background-color: #1a1f2c !important;
-            color: #e0e0e0 !important;
-        }
-        
-        /* Alerts */
-        .stAlert {
-            background-color: #2d3440 !important;
-            color: #ffffff !important;
-            border-left: 4px solid #4CAF50 !important;
-        }
-        
-        /* Success/Warning/Info boxes */
-        .stAlert.success {
-            border-left-color: #4CAF50 !important;
-        }
-        
-        .stAlert.warning {
-            border-left-color: #ff9800 !important;
-        }
-        
-        .stAlert.error {
-            border-left-color: #f44336 !important;
-        }
-        
-        .stAlert.info {
-            border-left-color: #2196F3 !important;
-        }
-        
-        /* Progress bar */
-        .stProgress > div > div {
-            background-color: #4CAF50 !important;
-        }
-        
-        /* Radio buttons */
-        div[role="radiogroup"] label {
-            background-color: #2d3440 !important;
-            color: #ffffff !important;
-            border: 1px solid #3a4050 !important;
-        }
-        
-        div[role="radiogroup"] label:hover {
-            background-color: #3a4050 !important;
-        }
-        
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-            background-color: #1a1f2c;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background-color: #3a4050;
-            border-radius: 5px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: #5a6270;
-        }
-        
-        /* Links */
-        a {
-            color: #66b0ff !important;
-        }
-        
-        a:hover {
-            color: #99ccff !important;
-        }
-        
-        /* Toggle switch */
-        .stCheckbox label {
-            color: #ffffff !important;
-        }
-        
-        /* Captions */
-        .stCaption {
-            color: #b0b0b0 !important;
-        }
-    </style>
-    """, unsafe_allow_html=True)
-        
+    # Dark mode toggle with better readability
+    dark_mode = st.toggle("🌙 Dark Mode", value=False, help="Switch between light and dark theme")
+    
+    if dark_mode:
+        st.markdown("""
+        <style>
+            /* Dark mode colors - Improved contrast */
+            .stApp {
+                background-color: #0e1117;
+                color: #ffffff;
+            }
+            
+            .main > div {
+                background-color: #0e1117;
+            }
+            
+            /* Headers and text - Much brighter */
+            h1, h2, h3, h4, h5, h6 {
+                color: #ffffff !important;
+                font-weight: 600 !important;
+            }
+            
+            p, li, .stMarkdown, .stCaption {
+                color: #e0e0e0 !important;
+            }
+            
+            /* Sidebar specific - CRITICAL FIX */
+            section[data-testid="stSidebar"] {
+                background-color: #1a1f2c !important;
+            }
+            
+            section[data-testid="stSidebar"] .stMarkdown,
+            section[data-testid="stSidebar"] p,
+            section[data-testid="stSidebar"] li,
+            section[data-testid="stSidebar"] span,
+            section[data-testid="stSidebar"] label {
+                color: #ffffff !important;
+                font-weight: 500 !important;
+            }
+            
+            /* Sidebar headers */
+            section[data-testid="stSidebar"] h1,
+            section[data-testid="stSidebar"] h2,
+            section[data-testid="stSidebar"] h3 {
+                color: #ffffff !important;
+                border-bottom: 1px solid #3a4050;
+                padding-bottom: 8px;
+            }
+            
+            /* Metric cards */
+            div[data-testid="stMetric"] {
+                background: linear-gradient(135deg, #2d3440 0%, #1a1f2c 100%) !important;
+                border: 1px solid #3a4050 !important;
+                border-radius: 10px !important;
+            }
+            
+            div[data-testid="stMetric"] label,
+            div[data-testid="stMetric"] div {
+                color: #ffffff !important;
+            }
+            
+            /* DataFrames */
+            .stDataFrame {
+                background-color: #1a1f2c !important;
+            }
+            
+            .stDataFrame td, .stDataFrame th {
+                color: #ffffff !important;
+                background-color: #1a1f2c !important;
+                border-color: #3a4050 !important;
+            }
+            
+            /* Buttons */
+            .stButton > button {
+                background-color: #2d3440 !important;
+                color: #ffffff !important;
+                border: 1px solid #3a4050 !important;
+                font-weight: 600 !important;
+            }
+            
+            .stButton > button:hover {
+                background-color: #3a4050 !important;
+                border-color: #5a6270 !important;
+            }
+            
+            /* Select boxes */
+            .stSelectbox > div > div {
+                background-color: #2d3440 !important;
+                color: #ffffff !important;
+                border-color: #3a4050 !important;
+            }
+            
+            .stSelectbox label {
+                color: #ffffff !important;
+            }
+            
+            /* Sliders */
+            .stSlider label {
+                color: #ffffff !important;
+            }
+            
+            .stSlider div[data-baseweb="slider"] {
+                color: #ffffff !important;
+            }
+            
+            /* Expanders */
+            .streamlit-expanderHeader {
+                background-color: #1a1f2c !important;
+                color: #ffffff !important;
+                border: 1px solid #3a4050 !important;
+            }
+            
+            .streamlit-expanderContent {
+                background-color: #1a1f2c !important;
+                color: #e0e0e0 !important;
+            }
+            
+            /* Alerts */
+            .stAlert {
+                background-color: #2d3440 !important;
+                color: #ffffff !important;
+                border-left: 4px solid #4CAF50 !important;
+            }
+            
+            /* Success/Warning/Info boxes */
+            .stAlert.success {
+                border-left-color: #4CAF50 !important;
+            }
+            
+            .stAlert.warning {
+                border-left-color: #ff9800 !important;
+            }
+            
+            .stAlert.error {
+                border-left-color: #f44336 !important;
+            }
+            
+            .stAlert.info {
+                border-left-color: #2196F3 !important;
+            }
+            
+            /* Progress bar */
+            .stProgress > div > div {
+                background-color: #4CAF50 !important;
+            }
+            
+            /* Radio buttons */
+            div[role="radiogroup"] label {
+                background-color: #2d3440 !important;
+                color: #ffffff !important;
+                border: 1px solid #3a4050 !important;
+            }
+            
+            div[role="radiogroup"] label:hover {
+                background-color: #3a4050 !important;
+            }
+            
+            /* Scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+                background-color: #1a1f2c;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background-color: #3a4050;
+                border-radius: 5px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #5a6270;
+            }
+            
+            /* Links */
+            a {
+                color: #66b0ff !important;
+            }
+            
+            a:hover {
+                color: #99ccff !important;
+            }
+            
+            /* Toggle switch */
+            .stCheckbox label {
+                color: #ffffff !important;
+            }
+            
+            /* Captions */
+            .stCaption {
+                color: #b0b0b0 !important;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+    
     st.divider()
     
     # BIG ANALYZE BUTTON
@@ -438,8 +438,6 @@ if dark_mode:
     st.divider()
     
     # Data status with timezone
-    from datetime import datetime
-    import pytz
     central = pytz.timezone('America/Chicago')
     current_time = datetime.now(central).strftime("%I:%M %p %Z")
     st.caption(f"🔄 Last update: {current_time}")
@@ -473,7 +471,7 @@ if dark_mode:
         • 🎾 Tennis
         • More coming soon!
         """)
-        
+
 # ============================================
 # LOAD DATA FUNCTION
 # ============================================
