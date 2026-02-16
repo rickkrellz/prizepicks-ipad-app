@@ -51,7 +51,7 @@ ODDS_API_MARKETS = {
     "NHL": "player_goals,player_assists,player_shots,player_hits",
     "SOCCER": "player_goals,player_assists,player_shots,player_passes",
     "TENNIS": "player_aces,player_double_faults,player_games_won",
-    "MLB": "player_hits,player_homeruns,player_rbi,player_runs,player_strikeouts",
-    "NFL": "player_pass_yds,player_pass_tds,player_rush_yds,player_rush_tds,player_receiving_yds",
+    "MLB": "player_hits,player_homeruns,player_rbi,player_runs,player_strikes,player_strikeouts",
+    "NFL": "player_pass_yds,player_pass_tds,player_rush_yds,player_rush_tds,player_receiving_yds,player_receptions",
     "WNBA": "player_points,player_rebounds,player_assists,player_steals,player_blocks",
 }
