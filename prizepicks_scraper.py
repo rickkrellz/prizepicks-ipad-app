@@ -1,5 +1,5 @@
 """
-PrizePicks Data Fetcher - Reads from JSON files updated by GitHub Actions
+PrizePicks Data Fetcher - Reads from JSON files updated by local fetcher
 """
 
 import pandas as pd
@@ -11,39 +11,26 @@ import os
 @st.cache_data(ttl=3600)  # Cache for 1 hour
 def fetch_prizepicks_data(sport="NBA"):
     """
-    Read PrizePicks data from JSON files (updated by GitHub Actions)
+    Read PrizePicks data from JSON files (updated by local fetcher)
     """
     try:
-<<<<<<< HEAD
         # Try to read from the latest JSON file
         filename = f"prizepicks_{sport.lower()}_latest.json"
         
-        # Check if file exists
-        if os.path.exists(filename):
-            with open(filename, 'r') as f:
-                data = json.load(f)
-            
-            df = pd.DataFrame(data)
-            
-            if not df.empty:
-                # Get file modification time (when GitHub Actions last updated it)
-                mod_time = datetime.fromtimestamp(os.path.getmtime(filename))
-=======
-        # Try multiple possible file paths
+        # Check multiple possible paths
         possible_paths = [
-            f"prizepicks_{sport.lower()}_latest.json",  # Current directory
-            f"/mount/src/prizepicks-ipad-app/prizepicks_{sport.lower()}_latest.json",  # Full path
+            filename,
+            f"/mount/src/prizepicks-ipad-app/{filename}",
+            f"./{filename}"
         ]
         
         file_found = None
-        for filepath in possible_paths:
-            if os.path.exists(filepath):
-                file_found = filepath
+        for path in possible_paths:
+            if os.path.exists(path):
+                file_found = path
                 break
         
         if file_found:
-            st.sidebar.write(f"📁 Reading from: {file_found}")  # Debug info
-            
             with open(file_found, 'r') as f:
                 data = json.load(f)
             
@@ -52,7 +39,6 @@ def fetch_prizepicks_data(sport="NBA"):
             if not df.empty:
                 # Get file modification time
                 mod_time = datetime.fromtimestamp(os.path.getmtime(file_found))
->>>>>>> f97242819fbb2c4d2704c871babed687f51bfbbc
                 st.sidebar.success(
                     f"✅ Loaded {len(df)} real {sport} props "
                     f"(updated {mod_time.strftime('%m/%d %I:%M %p')})"
@@ -62,21 +48,7 @@ def fetch_prizepicks_data(sport="NBA"):
                 st.sidebar.warning(f"JSON file for {sport} is empty")
                 return get_enhanced_mock_data(sport)
         else:
-<<<<<<< HEAD
             st.sidebar.warning(f"No data file found for {sport}")
-=======
-            st.sidebar.warning(f"No data file found for {sport}. Tried: {possible_paths}")
-            
-            # List all files in directory to help debug
-            try:
-                files = os.listdir('.')
-                json_files = [f for f in files if f.endswith('.json')]
-                if json_files:
-                    st.sidebar.info(f"Found JSON files: {json_files}")
-            except:
-                pass
-                
->>>>>>> f97242819fbb2c4d2704c871babed687f51bfbbc
             return get_enhanced_mock_data(sport)
             
     except Exception as e:
@@ -85,11 +57,7 @@ def fetch_prizepicks_data(sport="NBA"):
 
 def get_enhanced_mock_data(sport="NBA"):
     """
-<<<<<<< HEAD
-    Enhanced mock data as fallback (same as your current mock data)
-=======
-    Enhanced mock data as fallback
->>>>>>> f97242819fbb2c4d2704c871babed687f51bfbbc
+    Enhanced mock data as fallback (kept for when JSON files aren't available)
     """
     if sport == "NBA":
         mock_data = [
@@ -121,11 +89,7 @@ def get_enhanced_mock_data(sport="NBA"):
 @st.cache_data(ttl=300)
 def fetch_market_odds(sport="NBA"):
     """
-<<<<<<< HEAD
     Fetch market odds from The Odds API (this still works)
-=======
-    Fetch market odds from The Odds API
->>>>>>> f97242819fbb2c4d2704c871babed687f51bfbbc
     """
     import requests
     import os
