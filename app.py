@@ -1,6 +1,6 @@
 """
 Main PrizePicks +EV Optimizer App
-iPad-Optimized Version - Updated with Real Data
+iPad-Optimized Version - Fixed preview and duplicate detection
 """
 
 import streamlit as st
@@ -206,10 +206,11 @@ with st.sidebar:
     st.markdown("## ⚙️ Settings")
     
     # Sport selection
-    sport = st.selectbox(
+    selected_sport = st.selectbox(
         "Select Sport",
         ["NBA", "NFL", "MLB", "NHL"],
         index=0,
+        key="sport_selector",
         help="Choose which sport to analyze"
     )
     
@@ -249,7 +250,7 @@ with st.sidebar:
     current_time = datetime.now(central).strftime("%I:%M %p %Z")
     st.caption(f"🔄 Last update: {current_time}")
     
-    # Manual refresh - FIXED: removed st.rerun()
+    # Manual refresh
     if st.button("🔄 Refresh Data", use_container_width=True):
         st.cache_data.clear()
         st.success("Cache cleared! Click 'FIND BEST PARLAY' again.")
@@ -290,6 +291,32 @@ def load_data(sport):
         return pd.DataFrame(), pd.DataFrame()
 
 # ============================================
+# PREVIEW SECTION - Updates when sport changes
+# ============================================
+st.subheader("👀 Today's Available Props")
+
+# Create a placeholder for the preview
+preview_placeholder = st.empty()
+
+# Load preview data based on selected sport
+with st.spinner(f"Loading {selected_sport} preview..."):
+    preview_pp, preview_market = load_data(selected_sport)
+    
+    if not preview_pp.empty:
+        preview_df = preview_pp[['player', 'line', 'stat_type', 'team']].head(10).copy()
+        preview_df.columns = ['Player', 'Line', 'Stat Type', 'Team']
+        
+        # Show data source status
+        if len(preview_pp) > 50:  # Real data usually has many props
+            preview_placeholder.success(f"✅ Showing {len(preview_pp)} real {selected_sport} props from PrizePicks")
+        else:
+            preview_placeholder.info(f"📊 Showing {len(preview_pp)} {selected_sport} props")
+        
+        preview_placeholder.dataframe(preview_df, use_container_width=True, height=300)
+    else:
+        preview_placeholder.warning(f"No data available for {selected_sport}")
+
+# ============================================
 # MAIN APP LOGIC
 # ============================================
 if analyze_clicked:
@@ -299,8 +326,8 @@ if analyze_clicked:
         # Create progress bar for visual feedback
         progress_bar = st.progress(0, text="Loading PrizePicks data...")
         
-        # Load data
-        pp_data, market_data = load_data(sport)
+        # Load data for selected sport
+        pp_data, market_data = load_data(selected_sport)
         progress_bar.progress(30, text="Loading market odds...")
         
         # DEBUG: Show data info in expander
@@ -311,6 +338,7 @@ if analyze_clicked:
                 st.write(f"Rows: {len(pp_data)}")
                 if not pp_data.empty:
                     st.write("Columns:", list(pp_data.columns))
+                    st.write("Unique players:", pp_data['player'].nunique())
                     st.write("Sample players:", pp_data['player'].head(10).tolist())
                 else:
                     st.warning("PrizePicks data is empty!")
@@ -320,6 +348,7 @@ if analyze_clicked:
                 st.write(f"Rows: {len(market_data)}")
                 if not market_data.empty:
                     st.write("Columns:", list(market_data.columns))
+                    st.write("Unique players:", market_data['player'].nunique())
                     st.write("Sample players:", market_data['player'].head(10).tolist())
                 else:
                     st.warning("Market data is empty!")
@@ -343,13 +372,29 @@ if analyze_clicked:
         positive_ev = ev_data[ev_data['is_positive']].copy()
         positive_ev = positive_ev[positive_ev['ev'] >= min_ev]
         
+        # Remove duplicates (same player with same stat type)
+        if not positive_ev.empty:
+            positive_ev = positive_ev.drop_duplicates(subset=['player', 'stat_type'], keep='first')
+        
         # Check if we have enough picks
         if len(positive_ev) < num_legs:
             st.warning(f"⚠️ Only {len(positive_ev)} picks meet your {min_ev:.0%} EV threshold. Showing best available.")
+            # Get best available but remove duplicates
             positive_ev = ev_data.nlargest(num_legs * 2, 'ev')
+            positive_ev = positive_ev.drop_duplicates(subset=['player', 'stat_type'], keep='first')
         
-        # Select top picks
+        # Select top picks (ensure no duplicates)
         selected_picks = positive_ev.head(num_legs).copy()
+        
+        # Final duplicate check
+        if len(selected_picks) > selected_picks['player'].nunique():
+            st.warning("⚠️ Removing duplicate players from selection...")
+            selected_picks = selected_picks.drop_duplicates(subset=['player'], keep='first')
+            # If we removed too many, get next best
+            if len(selected_picks) < num_legs:
+                remaining_needed = num_legs - len(selected_picks)
+                additional = positive_ev[~positive_ev['player'].isin(selected_picks['player'])].head(remaining_needed)
+                selected_picks = pd.concat([selected_picks, additional])
         
         progress_bar.progress(90, text="Analyzing correlations...")
         
@@ -454,8 +499,9 @@ if analyze_clicked:
         # EV DISTRIBUTION CHART
         st.subheader("📊 Top Expected Value Picks")
         
-        # Prepare data for chart
+        # Prepare data for chart (remove duplicates for chart)
         chart_data = positive_ev.head(15).copy()
+        chart_data = chart_data.drop_duplicates(subset=['player'], keep='first')
         chart_data['player_short'] = chart_data['player'].apply(
             lambda x: x.split()[-1] if len(x.split()) > 1 else x
         )
@@ -467,7 +513,7 @@ if analyze_clicked:
             y='ev',
             color='ev',
             color_continuous_scale='RdYlGn',
-            title=f"Top 15 Picks by EV - {sport}",
+            title=f"Top 15 Picks by EV - {selected_sport}",
             labels={'ev': 'Expected Value', 'player_short': 'Player'}
         )
         
@@ -484,8 +530,9 @@ if analyze_clicked:
 
         # MARKET COMPARISON TABLE
         with st.expander("📈 View All Props with EV"):
-            # Show all props with EV
+            # Show all props with EV (remove duplicates for display)
             all_display = ev_data[['player', 'stat_type', 'line', 'direction', 'ev', 'is_positive']].copy()
+            all_display = all_display.drop_duplicates(subset=['player', 'stat_type'], keep='first')
             all_display['ev'] = all_display['ev'].apply(lambda x: f"{x:.1%}")
             all_display.columns = ['Player', 'Stat', 'Line', 'Rec. Pick', 'EV', '+EV']
             
@@ -495,19 +542,19 @@ if analyze_clicked:
                 height=400
             )
         
-        # ACTION BUTTONS - FIXED: removed st.link_button
+        # ACTION BUTTONS
         st.divider()
         st.markdown("### Ready to play?")
         
         col1, col2 = st.columns(2)
         with col1:
-            # Use markdown link instead of link_button for older Streamlit
+            # Use markdown link instead of link_button
             st.markdown("[📱 Open PrizePicks](https://app.prizepicks.com/)")
         with col2:
             # Use session state to trigger new analysis
             if st.button("🔄 New Analysis", use_container_width=True):
                 st.cache_data.clear()
-                st.experimental_rerun()
+                st.rerun()
         
         # DISCLAIMER
         st.divider()
@@ -550,21 +597,6 @@ else:
         **🔄 Avoid Correlations**
         Identify negatively correlated picks that hurt your chances
         """)
-    
-    # Preview of today's data with debug info
-    st.subheader("👀 Today's Available Props")
-    
-    # Load a small preview
-    preview_pp, preview_market = load_data("NBA")
-    
-    # Show data source status
-    if not preview_pp.empty:
-        preview_df = preview_pp[['player', 'line', 'stat_type']].head(10).copy()
-        preview_df.columns = ['Player', 'Line', 'Stat Type']
-        st.success(f"✅ Showing {len(preview_pp)} real PrizePicks props")
-        st.dataframe(preview_df, use_container_width=True, height=300)
-    else:
-        st.warning("Loading real data... Please click 'FIND BEST PARLAY'")
     
     # Instructions
     with st.expander("📖 How to Use This App"):
