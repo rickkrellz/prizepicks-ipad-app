@@ -445,13 +445,12 @@ if analyze_clicked:
             height=400,
             margin=dict(l=20, r=20, t=40, b=80),
             plot_bgcolor='rgba(0,0,0,0)',
-            paper_bgcolor='rgba(0,0,0,0)'
+            paper_bgcolor='rgba(0,0,0,0)',
+            yaxis_tickformat='.0%'  # Move tickformat to update_layout
         )
-        
-        fig.update_yaxis(tickformat='.0%')
-        
+
         st.plotly_chart(fig, use_container_width=True)
-        
+
         # MARKET COMPARISON TABLE
         with st.expander("📈 View All Props with EV"):
             # Show all props with EV
