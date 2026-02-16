@@ -6,6 +6,7 @@ import requests
 import pandas as pd
 import json
 from datetime import datetime
+import sys
 
 def fetch_prizepicks_data(sport="NBA"):
     """Fetch real PrizePicks data"""
@@ -27,14 +28,13 @@ def fetch_prizepicks_data(sport="NBA"):
     }
     
     try:
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=15)
         
         if response.status_code == 200:
             data = response.json()
             
             # Parse data
             players = {}
-            teams = {}
             
             for item in data.get('included', []):
                 if item.get('type') == 'new_player':
@@ -59,27 +59,39 @@ def fetch_prizepicks_data(sport="NBA"):
                         'timestamp': datetime.now().isoformat()
                     })
             
+            print(f"✅ Fetched {len(props)} {sport} props")
             return pd.DataFrame(props)
+        else:
+            print(f"❌ API returned {response.status_code} for {sport}")
+            return None
     except Exception as e:
-        print(f"Error fetching {sport}: {e}")
+        print(f"❌ Error fetching {sport}: {e}")
         return None
-    
-    return None
 
 def update_all_sports():
     """Update data for all sports"""
     sports = ["NBA", "NFL", "MLB", "NHL"]
+    success_count = 0
     
     for sport in sports:
-        print(f"Fetching {sport}...")
+        print(f"\n📊 Fetching {sport}...")
         df = fetch_prizepicks_data(sport)
         
         if df is not None and not df.empty:
             filename = f"prizepicks_{sport.lower()}_latest.json"
             df.to_json(filename, orient='records', indent=2)
-            print(f"✅ Saved {len(df)} {sport} props")
+            print(f"✅ Saved {len(df)} {sport} props to {filename}")
+            success_count += 1
         else:
             print(f"❌ Failed to fetch {sport}")
+    
+    print(f"\n✨ Done! Updated {success_count}/{len(sports)} sports")
+    
+    # Exit with error if no sports succeeded
+    if success_count == 0:
+        sys.exit(1)
 
 if __name__ == "__main__":
+    print("🎯 PrizePicks GitHub Actions Fetcher")
+    print("=" * 40)
     update_all_sports()
