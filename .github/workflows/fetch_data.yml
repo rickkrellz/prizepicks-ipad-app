@@ -25,13 +25,21 @@ jobs:
       - name: Run fetcher
         run: python github_actions_fetcher.py
         
+      - name: List files after fetch
+        run: |
+          echo "=== JSON Files ==="
+          ls -la *.json || echo "No JSON files found"
+          echo "=== All Files ==="
+          ls -la
+        
       - name: Upload debug logs
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: debug-logs
           path: |
-            fetcher_debug.log
-            fetch_summary.txt
+            *.log
+            *.txt
             *.json
           
       - name: Commit files
@@ -39,5 +47,4 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add *.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update PrizePicks data"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update PrizePicks data [skip ci]" && git push)
