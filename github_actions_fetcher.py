@@ -1,5 +1,5 @@
 """
-GitHub Actions Fetcher - Working version
+GitHub Actions Fetcher - Working version with debug logging
 """
 
 import requests
@@ -7,6 +7,12 @@ import json
 from datetime import datetime
 import sys
 import os
+
+def log_message(msg):
+    """Print message and also write to debug log"""
+    print(msg)
+    with open('fetcher_debug.log', 'a') as f:
+        f.write(f"{datetime.now()}: {msg}\n")
 
 def fetch_prizepicks_data(sport="NBA"):
     """Fetch real PrizePicks data"""
@@ -28,20 +34,25 @@ def fetch_prizepicks_data(sport="NBA"):
     }
     
     try:
-        print(f"Fetching {sport}...")
+        log_message(f"Fetching {sport} from {url}")
         response = requests.get(url, headers=headers, timeout=15)
         
+        log_message(f"Response status: {response.status_code}")
+        
         if response.status_code != 200:
-            print(f"Error: {response.status_code}")
+            log_message(f"Error: {response.status_code}")
             return None
             
         data = response.json()
+        log_message(f"Got response data")
         
         # Create player lookup
         players = {}
         for item in data.get('included', []):
             if item.get('type') == 'new_player':
                 players[item['id']] = item['attributes']['name']
+        
+        log_message(f"Found {len(players)} players")
         
         # Parse props
         props = []
@@ -62,31 +73,50 @@ def fetch_prizepicks_data(sport="NBA"):
                     'sport': sport
                 })
         
-        print(f"Found {len(props)} props for {sport}")
+        log_message(f"Found {len(props)} props for {sport}")
         return props
         
     except Exception as e:
-        print(f"Error: {e}")
+        log_message(f"Error: {e}")
         return None
 
 def save_data():
     """Save data for all sports"""
+    log_message("="*50)
+    log_message("Starting PrizePicks data fetch")
+    
     sports = ["NBA", "NFL", "MLB", "NHL"]
+    files_created = []
     
     for sport in sports:
-        print(f"\n--- {sport} ---")
+        log_message(f"\n--- {sport} ---")
         props = fetch_prizepicks_data(sport)
         
-        if props:
+        if props and len(props) > 0:
             filename = f"prizepicks_{sport.lower()}_latest.json"
             with open(filename, 'w') as f:
                 json.dump(props, f, indent=2)
-            print(f"✅ Saved {len(props)} props to {filename}")
+            log_message(f"✅ Saved {len(props)} props to {filename}")
+            files_created.append(filename)
+            
+            # Verify file was created
+            if os.path.exists(filename):
+                size = os.path.getsize(filename)
+                log_message(f"📁 File size: {size} bytes")
+            else:
+                log_message(f"❌ File not found after saving!")
         else:
-            print(f"❌ Failed to fetch {sport}")
+            log_message(f"❌ Failed to fetch {sport}")
+    
+    log_message(f"\n✅ Created files: {files_created}")
+    
+    # Write final summary
+    with open('fetch_summary.txt', 'w') as f:
+        f.write(f"Files created: {files_created}\n")
+        f.write(f"Time: {datetime.now()}\n")
 
 if __name__ == "__main__":
-    print("🎯 PrizePicks Data Fetcher")
+    print("🎯 PrizePicks Data Fetcher with Debug")
     print("=" * 40)
     save_data()
-    print("\n✅ Done!")
+    print("\n✅ Done! Check fetcher_debug.log for details")
