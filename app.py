@@ -1,6 +1,6 @@
 """
 Main PrizePicks +EV Optimizer App
-iPad-Optimized Version
+iPad-Optimized Version - Updated with Real Data
 """
 
 import streamlit as st
@@ -9,6 +9,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
 import numpy as np
+import pytz
+from time import sleep
 
 # Import our modules
 from ev_calculator import calculate_ev, calculate_parlay_probability
@@ -178,6 +180,16 @@ st.markdown("""
         padding: 15px !important;
         font-size: 16px !important;
     }
+    
+    /* Debug panel styling */
+    .debug-info {
+        background-color: #f0f2f6;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 0px;
+        font-family: monospace;
+        font-size: 12px;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -232,14 +244,15 @@ with st.sidebar:
     
     st.divider()
     
-    # Data status
-    current_time = datetime.now().strftime("%I:%M %p")
+    # Data status with correct timezone
+    central = pytz.timezone('America/Chicago')
+    current_time = datetime.now(central).strftime("%I:%M %p %Z")
     st.caption(f"🔄 Last update: {current_time}")
     
-    # Manual refresh
+    # Manual refresh - FIXED: removed st.rerun()
     if st.button("🔄 Refresh Data", use_container_width=True):
         st.cache_data.clear()
-        st.rerun()
+        st.success("Cache cleared! Click 'FIND BEST PARLAY' again.")
     
     st.divider()
     
@@ -290,6 +303,27 @@ if analyze_clicked:
         pp_data, market_data = load_data(sport)
         progress_bar.progress(30, text="Loading market odds...")
         
+        # DEBUG: Show data info in expander
+        with st.expander("🔍 Debug Info (Click to see data details)"):
+            col1, col2 = st.columns(2)
+            with col1:
+                st.write("**PrizePicks Data:**")
+                st.write(f"Rows: {len(pp_data)}")
+                if not pp_data.empty:
+                    st.write("Columns:", list(pp_data.columns))
+                    st.write("Sample players:", pp_data['player'].head(10).tolist())
+                else:
+                    st.warning("PrizePicks data is empty!")
+            
+            with col2:
+                st.write("**Market Data:**")
+                st.write(f"Rows: {len(market_data)}")
+                if not market_data.empty:
+                    st.write("Columns:", list(market_data.columns))
+                    st.write("Sample players:", market_data['player'].head(10).tolist())
+                else:
+                    st.warning("Market data is empty!")
+        
         if pp_data.empty or market_data.empty:
             st.error("❌ Could not load data. Please try again.")
             st.stop()
@@ -335,8 +369,8 @@ if analyze_clicked:
         # ============================================
         st.divider()
         
-        # Success message
-        st.success(f"✅ Found {len(positive_ev)} profitable picks!")
+        # Success message with count of real props
+        st.success(f"✅ Found {len(positive_ev)} profitable picks from {len(pp_data)} total PrizePicks props!")
         
         # METRICS ROW
         col1, col2 = st.columns(2)
@@ -365,7 +399,7 @@ if analyze_clicked:
         display_df['ev'] = display_df['ev'].apply(lambda x: f"{x:.1%}")
         display_df.columns = ['Player', 'Stat', 'Line', 'Pick', 'EV']
         
-        # Add a grade column (optional)
+        # Add a grade column
         def get_grade(ev_str):
             ev_val = float(ev_str.strip('%')) / 100
             if ev_val >= 0.10:
@@ -425,9 +459,6 @@ if analyze_clicked:
         chart_data['player_short'] = chart_data['player'].apply(
             lambda x: x.split()[-1] if len(x.split()) > 1 else x
         )
-        chart_data['color'] = chart_data['ev'].apply(
-            lambda x: 'green' if x > 0.05 else 'orange'
-        )
         
         # Create bar chart
         fig = px.bar(
@@ -446,7 +477,7 @@ if analyze_clicked:
             margin=dict(l=20, r=20, t=40, b=80),
             plot_bgcolor='rgba(0,0,0,0)',
             paper_bgcolor='rgba(0,0,0,0)',
-            yaxis_tickformat='.0%'  # Move tickformat to update_layout
+            yaxis_tickformat='.0%'
         )
 
         st.plotly_chart(fig, use_container_width=True)
@@ -464,20 +495,19 @@ if analyze_clicked:
                 height=400
             )
         
-        # ACTION BUTTONS
+        # ACTION BUTTONS - FIXED: removed st.link_button
         st.divider()
         st.markdown("### Ready to play?")
         
         col1, col2 = st.columns(2)
         with col1:
-            st.link_button(
-                "📱 Open PrizePicks",
-                "https://app.prizepicks.com/",
-                use_container_width=True
-            )
+            # Use markdown link instead of link_button for older Streamlit
+            st.markdown("[📱 Open PrizePicks](https://app.prizepicks.com/)")
         with col2:
+            # Use session state to trigger new analysis
             if st.button("🔄 New Analysis", use_container_width=True):
-                st.rerun()
+                st.cache_data.clear()
+                st.experimental_rerun()
         
         # DISCLAIMER
         st.divider()
@@ -521,15 +551,20 @@ else:
         Identify negatively correlated picks that hurt your chances
         """)
     
-    # Preview of today's data
+    # Preview of today's data with debug info
     st.subheader("👀 Today's Available Props")
     
     # Load a small preview
-    preview_pp, _ = load_data("NBA")
+    preview_pp, preview_market = load_data("NBA")
+    
+    # Show data source status
     if not preview_pp.empty:
         preview_df = preview_pp[['player', 'line', 'stat_type']].head(10).copy()
         preview_df.columns = ['Player', 'Line', 'Stat Type']
+        st.success(f"✅ Showing {len(preview_pp)} real PrizePicks props")
         st.dataframe(preview_df, use_container_width=True, height=300)
+    else:
+        st.warning("Loading real data... Please click 'FIND BEST PARLAY'")
     
     # Instructions
     with st.expander("📖 How to Use This App"):
@@ -553,8 +588,8 @@ else:
         """
         )
     
-    # Bottom spacing - FIXED THIS LINE
+    # Bottom spacing
     st.markdown("<br><br>", unsafe_allow_html=True)
 
-# Always show bottom padding - FIXED THIS LINE
+# Always show bottom padding
 st.markdown("<br><br><br>", unsafe_allow_html=True)
