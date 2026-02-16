@@ -190,22 +190,29 @@ st.title("🏀 PrizePicks +EV Optimizer")
 st.caption("Optimized for iPad • Tap-friendly • Auto-updates daily")
 
 # ============================================
-# SIDEBAR SETTINGS
+# SIDEBAR SETTINGS - MULTI-SPORT + DARK MODE
 # ============================================
 with st.sidebar:
     st.markdown("## ⚙️ Settings")
     
-    # Sport selection
-    selected_sport = st.selectbox(
-        "Select Sport",
-        ["NBA", "NFL", "MLB", "NHL"],
+    # Import sport config
+    from sports_config import SPORT_DISPLAY_NAMES
+    
+    # Sport selection with emojis
+    sport_options = list(SPORT_DISPLAY_NAMES.keys())
+    sport_display = list(SPORT_DISPLAY_NAMES.values())
+    
+    selected_sport_index = st.selectbox(
+        "🎯 Select Sport",
+        range(len(sport_options)),
+        format_func=lambda x: sport_display[x],
         index=0,
-        key="sport_selector",
-        help="Choose which sport to analyze"
+        key="sport_selector"
     )
+    selected_sport = sport_options[selected_sport_index]
     
     # Parlay legs
-    st.markdown("### Parlay Size")
+    st.markdown("### 📊 Parlay Size")
     num_legs = st.select_slider(
         "Number of Picks",
         options=[2, 3, 4, 5, 6],
@@ -214,7 +221,7 @@ with st.sidebar:
     )
     
     # EV threshold
-    st.markdown("### Minimum Value")
+    st.markdown("### 💰 Minimum Value")
     min_ev = st.slider(
         "EV Threshold",
         min_value=0,
@@ -223,6 +230,98 @@ with st.sidebar:
         step=1,
         help="Minimum expected value %"
     ) / 100
+    
+    st.divider()
+    
+    # Dark mode toggle
+    dark_mode = st.toggle("🌙 Dark Mode", value=False, help="Switch between light and dark theme")
+    
+    if dark_mode:
+        st.markdown("""
+        <style>
+            /* Dark mode colors */
+            .stApp {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            
+            .main > div {
+                background-color: #1a1a1a;
+            }
+            
+            h1, h2, h3, h4, h5, h6, p, li, .stMarkdown {
+                color: #ffffff !important;
+            }
+            
+            .st-b7, .st-b8, .st-b9, .st-ba, .st-bb {
+                color: #ffffff !important;
+            }
+            
+            div[data-testid="stMetric"] {
+                background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+                border: 1px solid #444 !important;
+            }
+            
+            div[data-testid="stMetric"] label,
+            div[data-testid="stMetric"] div {
+                color: #ffffff !important;
+            }
+            
+            .stDataFrame {
+                background-color: #2d2d2d !important;
+                color: #ffffff !important;
+            }
+            
+            .stDataFrame td, .stDataFrame th {
+                color: #ffffff !important;
+                background-color: #2d2d2d !important;
+            }
+            
+            .stButton > button {
+                background-color: #2d2d2d !important;
+                color: #ffffff !important;
+                border: 1px solid #444 !important;
+            }
+            
+            .stButton > button:hover {
+                background-color: #3d3d3d !important;
+            }
+            
+            .stSelectbox > div > div {
+                background-color: #2d2d2d !important;
+                color: #ffffff !important;
+            }
+            
+            .streamlit-expanderHeader {
+                background-color: #2d2d2d !important;
+                color: #ffffff !important;
+            }
+            
+            .stAlert {
+                background-color: #2d2d2d !important;
+                color: #ffffff !important;
+            }
+            
+            .st-bq {
+                background-color: #2d2d2d !important;
+            }
+            
+            /* Scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+                background-color: #2d2d2d;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background-color: #555;
+                border-radius: 5px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #777;
+            }
+        </style>
+        """, unsafe_allow_html=True)
     
     st.divider()
     
@@ -235,7 +334,9 @@ with st.sidebar:
     
     st.divider()
     
-    # Data status with correct timezone
+    # Data status with timezone
+    from datetime import datetime
+    import pytz
     central = pytz.timezone('America/Chicago')
     current_time = datetime.now(central).strftime("%I:%M %p %Z")
     st.caption(f"🔄 Last update: {current_time}")
@@ -243,7 +344,7 @@ with st.sidebar:
     # Manual refresh
     if st.button("🔄 Refresh Data", use_container_width=True):
         st.cache_data.clear()
-        st.success("Cache cleared! Click 'FIND BEST PARLAY' again.")
+        st.success("✅ Cache cleared! Click 'FIND BEST PARLAY' again.")
     
     st.divider()
     
@@ -255,15 +356,21 @@ with st.sidebar:
         - Higher EV = Better value
         
         **How to use:**
-        1. Set your minimum EV (5% is good)
-        2. Click "FIND BEST PARLAY"
-        3. Review the picks
-        4. Avoid same-team players
-        5. Check injuries before playing
+        1. Select your sport from the dropdown
+        2. Set your parlay size (2-6 picks)
+        3. Adjust EV threshold (5% is good start)
+        4. Click "FIND BEST PARLAY"
+        5. Review the picks
+        6. Toggle dark mode for night viewing
         
-        **Note:** This is for research only. Always verify lines.
+        **Supported Sports:**
+        • 🏀 NBA Basketball
+        • 🏒 NHL Hockey
+        • ⚽ Soccer
+        • 🎾 Tennis
+        • More coming soon!
         """)
-
+        
 # ============================================
 # LOAD DATA FUNCTION
 # ============================================
