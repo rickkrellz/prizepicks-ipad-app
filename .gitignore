@@ -10,10 +10,9 @@ __pycache__/
 *.pyd
 *.pyf
 
-# Data files
-*.csv
+# Data files - IGNORE all JSON files EXCEPT our PrizePicks ones
 *.json
-*.db
+!prizepicks_*_latest.json
 
 # Environment variables
 .env

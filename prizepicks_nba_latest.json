@@ -1,0 +1,4251 @@
+[
+  {
+    "player": "Brandon Miller",
+    "line": 21.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "LaMelo Ball",
+    "line": 20.0,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Miles Bridges",
+    "line": 16.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Amen Thompson",
+    "line": 15.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jabari Smith",
+    "line": 15.0,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "LaMelo Ball",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Amen Thompson",
+    "line": 7.0,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jabari Smith",
+    "line": 7.0,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Amen Thompson",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Miles Bridges",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "LaMelo Ball",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandon Miller",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandon Miller",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Andrew Nembhard",
+    "line": 16.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Aaron Nesmith",
+    "line": 13.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Andrew Nembhard",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Aaron Nesmith",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Joel Embiid",
+    "line": 28.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Joel Embiid",
+    "line": 8.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 39.0,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 35.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 33.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 33.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 32.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 30.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 29.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 29.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 29.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 29.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 26.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 24.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 23.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 22.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 22.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 21.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 21.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 20.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 19.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 19.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 18.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 18.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 18.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 17.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 17.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 15.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 15.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 15.0,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 14.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 14.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 13.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 13.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 13.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 13.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 12.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 12.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 11.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 11.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 11.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 11.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 11.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 11.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 11.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 9.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 8.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 8.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 7.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 6.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 6.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 4.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 2.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 2.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Ausar Thompson",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Duncan Robinson",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mikal Bridges",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "OG Anunoby",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paul Reed",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cade Cunningham",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jalen Brunson",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Karl-Anthony Towns",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Josh Hart",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tobias Harris",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 38.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 34.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 33.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 29.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 29.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 29.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 27.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 27.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 26.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 26.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 24.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 23.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 23.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 23.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 21.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 21.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 20.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 19.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 19.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 18.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 18.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 17.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 17.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 15.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 15.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 15.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 14.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 13.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 13.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 13.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 13.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 12.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 11.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 11.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 11.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 10.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 9.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 9.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 9.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 9.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 9.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 8.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 8.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Mark Williams",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 7.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 6.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 6.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 5.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 4.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 4.5,
+    "stat_type": "Blocked Shots",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 3.5,
+    "stat_type": "Blocked Shots",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Aaron Fox",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 2.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Collin Gillespie",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 2.5,
+    "stat_type": "Blocked Shots",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 2.5,
+    "stat_type": "Steals",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Vassell",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Devin Booker",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Royce O'Neale",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 1.5,
+    "stat_type": "Blocked Shots",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 1.5,
+    "stat_type": "Steals",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephon Castle",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "line": 0.5,
+    "stat_type": "Steals",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 39.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 39.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 35.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 32.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 32.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 29.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 29.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 28.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 28.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 27.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 27.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 23.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 23.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 22.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 21.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 21.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 20.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 19.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 18.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 17.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 17.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 16.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 16.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 15.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 15.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 14.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 14.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 14.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 13.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 13.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 12.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 11.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 10.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 10.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 10.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 9.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 7.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 7.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 6.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 6.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 5.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 5.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 5.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 4.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 4.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 4.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 4.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 2.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick White",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 2.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Stephen Curry",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jaylen Brown",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Moses Moody",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Payton Pritchard",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Sam Hauser",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brandin Podziemski",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "De'Anthony Melton",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Draymond Green",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kristaps Porzi\u0146\u0123is",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Vu\u010devi\u0107",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paolo Banchero",
+    "line": 21.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Desmond Bane",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Paolo Banchero",
+    "line": 8.0,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Desmond Bane",
+    "line": 4.0,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 49.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 39.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 39.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 38.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 36.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 35.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 34.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 34.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 31.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 31.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 29.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 29.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 29.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 28.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 27.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 26.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 24.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 23.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 23.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 20.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 20.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 19.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 18.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 18.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 16.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 15.5,
+    "stat_type": "Pts+Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 15.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 15.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brook Lopez",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick Jones",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 14.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 14.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 13.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 13.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 13.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 13.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brook Lopez",
+    "line": 12.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 12.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 12.5,
+    "stat_type": "Pts+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 12.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 11.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 11.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 10.5,
+    "stat_type": "Pts+Rebs",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 10.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 10.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 9.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 9.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 9.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 9.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick Jones",
+    "line": 8.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 7.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 7.5,
+    "stat_type": "Rebs+Asts",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 7.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 7.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 7.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 6.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brook Lopez",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick Jones",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 5.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 5.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 5.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 4.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 4.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 4.5,
+    "stat_type": "Points",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 4.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brook Lopez",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brook Lopez",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brook Lopez",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick Jones",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 3.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 3.5,
+    "stat_type": "Steals",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 3.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 3.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick Jones",
+    "line": 2.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 2.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brook Lopez",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick Jones",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 2.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 2.5,
+    "stat_type": "Rebounds",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 2.5,
+    "stat_type": "Steals",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 2.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick Jones",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Brook Lopez",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Cameron Johnson",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Tim Hardaway",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Jamal Murray",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "line": 1.5,
+    "stat_type": "Steals",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Nikola Joki\u0107",
+    "line": 1.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bruce Brown",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 1.5,
+    "stat_type": "Assists",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Bennedict Mathurin",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Derrick Jones",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "John Collins",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Kris Dunn",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  },
+  {
+    "player": "Christian Braun",
+    "line": 0.5,
+    "stat_type": "3-PT Made",
+    "sport": "NBA",
+    "fetched_at": "2026-02-16T00:20:19.790757"
+  }
+]

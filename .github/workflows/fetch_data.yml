@@ -1,0 +1,50 @@
+name: Fetch PrizePicks Data
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install requests
+        run: pip install requests
+        
+      - name: Run fetcher
+        run: python github_actions_fetcher.py
+        
+      - name: List files after fetch
+        run: |
+          echo "=== JSON Files ==="
+          ls -la *.json || echo "No JSON files found"
+          echo "=== All Files ==="
+          ls -la
+        
+      - name: Upload debug logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: debug-logs
+          path: |
+            *.log
+            *.txt
+            *.json
+          
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update PrizePicks data [skip ci]" && git push)
