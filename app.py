@@ -1,6 +1,6 @@
 """
 Main PrizePicks +EV Optimizer App
-iPad-Optimized Version - All 8 Features Included
+iPad-Optimized Version - All 11 Features Included
 """
 
 import streamlit as st
@@ -166,6 +166,15 @@ st.markdown("""
         font-size: 12px;
         font-weight: bold;
     }
+    
+    /* Share button styling */
+    .share-box {
+        background-color: #f0f2f6;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px 0px;
+        font-family: monospace;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -240,6 +249,18 @@ with st.sidebar:
     st.caption(f"🔄 Last update: {current_time}")
 
 # ============================================
+# LOAD DATA FUNCTION
+# ============================================
+@st.cache_data(ttl=300)
+def load_data(sport):
+    try:
+        pp_data, market_data = get_daily_data(sport)
+        return pp_data, market_data
+    except Exception as e:
+        st.error(f"Error loading data: {e}")
+        return pd.DataFrame(), pd.DataFrame()
+
+# ============================================
 # MAIN TABS
 # ============================================
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
@@ -251,16 +272,6 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
 # TAB 1: PARLAY BUILDER
 # ============================================
 with tab1:
-    # Load data
-    @st.cache_data(ttl=300)
-    def load_data(sport):
-        try:
-            pp_data, market_data = get_daily_data(sport)
-            return pp_data, market_data
-        except Exception as e:
-            st.error(f"Error loading data: {e}")
-            return pd.DataFrame(), pd.DataFrame()
-    
     # Preview section
     st.subheader("👀 Today's Available Props")
     
@@ -357,6 +368,38 @@ with tab1:
                 
                 st.dataframe(pd.DataFrame(parlay_data), use_container_width=True, height=400)
                 
+                # ============================================
+                # UPGRADE 3: SHARE FEATURE
+                # ============================================
+                st.subheader("📤 Share This Parlay")
+                
+                # Create share text
+                share_text = "🎯 My +EV Parlay from PrizePicks Pro:\n\n"
+                for _, pick in selected_picks.iterrows():
+                    share_text += f"• {pick['player']} {pick['stat_type']} {pick['direction']} {pick['line']} (EV: {pick['ev']:.1%})\n"
+                share_text += f"\n📊 Average EV: {selected_picks['ev'].mean():.1%}"
+                share_text += f"\n🎯 Win Probability: {adjusted_prob:.1%}"
+                share_text += f"\n\nBuilt with PrizePicks +EV Pro"
+                
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.text_area("📋 Copy Text", share_text, height=200)
+                
+                with col2:
+                    st.markdown("""
+                    <div class="share-box">
+                        <strong>Share Options:</strong><br><br>
+                        • 📱 Copy and paste to Messages<br>
+                        • 📧 Email to friends<br>
+                        • 🐦 Post on Twitter/X<br>
+                        • 💬 Share in Discord/Telegram
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                if st.button("📋 Copy to Clipboard"):
+                    st.write(share_text)
+                    st.success("✅ Select all and copy (Cmd+C / Ctrl+C)")
+                
                 # Quick bet logging
                 col1, col2 = st.columns(2)
                 with col1:
@@ -404,7 +447,7 @@ with tab1:
             ios_widget.generate_widget_data(display_positive_ev, pp_data)
 
 # ============================================
-# TAB 2: BET TRACKER
+# TAB 2: BET TRACKER (WITH ENHANCED ANALYTICS)
 # ============================================
 with tab2:
     st.subheader("📊 Bet Tracking & Performance")
@@ -431,72 +474,215 @@ with tab2:
     with col4:
         st.metric("ROI", f"{stats['roi']:.1f}%")
     
-    # Performance chart
-    if not bets_df.empty:
-        # Group by date
-        bets_df['date_only'] = pd.to_datetime(bets_df['date']).dt.date
-        daily_pnl = bets_df.groupby('date_only')['profit'].sum().reset_index()
+    # ============================================
+    # UPGRADE 1: ENHANCED ANALYTICS DASHBOARD
+    # ============================================
+    st.subheader("📈 Advanced Analytics")
+    
+    if not bets_df.empty and len(bets_df) > 0:
+        # Filter to completed bets
+        completed_bets = bets_df[bets_df['outcome'].notna()].copy()
         
-        fig = px.line(daily_pnl, x='date_only', y='profit', title='Daily P&L',
-                     labels={'profit': 'Profit/Loss ($)', 'date_only': 'Date'})
-        fig.add_hline(y=0, line_dash="dash", line_color="red")
-        st.plotly_chart(fig, use_container_width=True)
-        
-        # Bet history
-        st.subheader("Bet History")
-        
-        # Add outcome input for pending bets
-        pending = bets_df[bets_df['outcome'].isna()]
-        if not pending.empty:
-            st.warning(f"⚠️ {len(pending)} bets pending result")
+        if not completed_bets.empty:
+            # 1. Win Rate by Sport
+            st.markdown("### 🏆 Win Rate by Sport")
+            sport_stats = completed_bets.groupby('sport').agg({
+                'outcome': lambda x: (x == 'Win').sum(),
+                'stake': 'sum',
+                'profit': 'sum',
+                'id': 'count'
+            }).rename(columns={'outcome': 'wins', 'id': 'bets'})
             
-            for _, bet in pending.iterrows():
-                col1, col2, col3 = st.columns([3, 1, 1])
-                with col1:
-                    st.write(f"{bet['player']} - {bet['stat_type']} {bet['line']} ({bet['pick']})")
-                with col2:
-                    if st.button(f"✅ Win", key=f"win_{bet['id']}"):
-                        profit = bet['stake'] * (bet['odds'] - 1)
-                        bet_tracker.update_outcome(bet['id'], 'Win', profit)
-                        bankroll_mgr.update_bankroll(bet['stake'], profit)
-                        st.rerun()
-                with col3:
-                    if st.button(f"❌ Loss", key=f"loss_{bet['id']}"):
-                        bet_tracker.update_outcome(bet['id'], 'Loss', -bet['stake'])
-                        bankroll_mgr.update_bankroll(bet['stake'], -bet['stake'])
-                        st.rerun()
-        
-        # Show completed bets
-        completed = bets_df[bets_df['outcome'].notna()]
-        if not completed.empty:
-            st.dataframe(
-                completed[['date', 'sport', 'player', 'stat_type', 'line', 'pick', 'odds', 'stake', 'outcome', 'profit']],
-                use_container_width=True,
-                height=400
+            sport_stats['win_rate'] = (sport_stats['wins'] / sport_stats['bets'] * 100).round(1)
+            sport_stats['roi'] = (sport_stats['profit'] / sport_stats['stake'] * 100).round(1)
+            
+            fig = px.bar(
+                sport_stats.reset_index(), 
+                x='sport', 
+                y='win_rate', 
+                color='win_rate',
+                color_continuous_scale='RdYlGn',
+                title='Win Rate by Sport',
+                text=sport_stats['win_rate'].apply(lambda x: f'{x}%')
             )
+            fig.update_traces(textposition='outside')
+            fig.update_layout(yaxis_range=[0, 100])
+            st.plotly_chart(fig, use_container_width=True)
+            
+            # 2. Profit/Loss by Sport
+            fig2 = px.bar(
+                sport_stats.reset_index(),
+                x='sport',
+                y='profit',
+                color='profit',
+                color_continuous_scale='RdYlGn',
+                title='Profit/Loss by Sport',
+                text=sport_stats['profit'].apply(lambda x: f'${x:.0f}')
+            )
+            fig2.update_traces(textposition='outside')
+            st.plotly_chart(fig2, use_container_width=True)
+            
+            # 3. Best Performing Players
+            st.markdown("### ⭐ Top Performing Players")
+            player_stats = completed_bets.groupby('player').agg({
+                'profit': 'sum',
+                'outcome': lambda x: (x == 'Win').sum(),
+                'id': 'count'
+            }).rename(columns={'outcome': 'wins', 'id': 'bets'})
+            
+            player_stats['win_rate'] = (player_stats['wins'] / player_stats['bets'] * 100).round(1)
+            player_stats = player_stats[player_stats['bets'] >= 3].sort_values('profit', ascending=False).head(10)
+            
+            if not player_stats.empty:
+                st.dataframe(
+                    player_stats[['profit', 'wins', 'bets', 'win_rate']].style.format({
+                        'profit': '${:.2f}',
+                        'win_rate': '{:.1f}%'
+                    }),
+                    use_container_width=True
+                )
+            else:
+                st.info("Not enough data for player analysis (need at least 3 bets per player)")
+            
+            # 4. Performance Over Time
+            st.markdown("### 📅 Performance Trend")
+            
+            # Group by week
+            completed_bets['week'] = pd.to_datetime(completed_bets['date']).dt.strftime('%Y-%U')
+            weekly_stats = completed_bets.groupby('week').agg({
+                'profit': 'sum',
+                'id': 'count'
+            }).rename(columns={'id': 'bets'})
+            
+            fig3 = px.line(
+                weekly_stats.reset_index(),
+                x='week',
+                y='profit',
+                title='Weekly Profit/Loss',
+                markers=True
+            )
+            fig3.add_hline(y=0, line_dash="dash", line_color="red")
+            st.plotly_chart(fig3, use_container_width=True)
+            
+            # 5. Bet Size Analysis
+            st.markdown("### 💰 Bet Size Analysis")
+            
+            # Create bet size buckets
+            completed_bets['size_bucket'] = pd.cut(
+                completed_bets['stake'],
+                bins=[0, 10, 25, 50, 100, 500],
+                labels=['$0-10', '$10-25', '$25-50', '$50-100', '$100+']
+            )
+            
+            size_stats = completed_bets.groupby('size_bucket').agg({
+                'profit': 'sum',
+                'outcome': lambda x: (x == 'Win').sum(),
+                'id': 'count'
+            }).rename(columns={'outcome': 'wins', 'id': 'bets'})
+            
+            size_stats['win_rate'] = (size_stats['wins'] / size_stats['bets'] * 100).round(1)
+            
+            st.dataframe(size_stats, use_container_width=True)
+    
+    # ============================================
+    # UPGRADE 2: EXPORT FEATURE
+    # ============================================
+    st.subheader("📥 Export Data")
+    
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        if st.button("📊 Export to CSV") and not bets_df.empty:
+            csv = bets_df.to_csv(index=False)
+            st.download_button(
+                label="📥 Download CSV",
+                data=csv,
+                file_name=f"bet_history_{datetime.now().strftime('%Y%m%d_%H%M')}.csv",
+                mime="text/csv"
+            )
+    
+    with col2:
+        if st.button("📈 Export Analytics") and not bets_df.empty:
+            # Create summary analytics
+            summary = {
+                'total_bets': stats['total_bets'],
+                'win_rate': f"{stats['win_rate']:.1f}%",
+                'total_profit': f"${stats['total_profit']:.2f}",
+                'roi': f"{stats['roi']:.1f}%",
+                'avg_odds': f"{stats['avg_odds']:.2f}",
+                'export_date': datetime.now().isoformat()
+            }
+            summary_df = pd.DataFrame([summary])
+            
+            csv_summary = summary_df.to_csv(index=False)
+            st.download_button(
+                label="📥 Download Summary",
+                data=csv_summary,
+                file_name=f"bet_summary_{datetime.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv"
+            )
+    
+    with col3:
+        if st.button("📋 Copy to Clipboard") and not bets_df.empty:
+            st.code(bets_df.to_string(), language="text")
+            st.success("✅ Select all and copy (Cmd+C / Ctrl+C)")
+    
+    # Bet history
+    st.subheader("📜 Bet History")
+    
+    # Add outcome input for pending bets
+    pending = bets_df[bets_df['outcome'].isna()] if not bets_df.empty else pd.DataFrame()
+    if not pending.empty:
+        st.warning(f"⚠️ {len(pending)} bets pending result")
+        
+        for _, bet in pending.iterrows():
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col1:
+                st.write(f"{bet['player']} - {bet['stat_type']} {bet['line']} ({bet['pick']})")
+            with col2:
+                st.write(f"${bet['stake']:.2f}")
+            with col3:
+                if st.button(f"✅ Win", key=f"win_{bet['id']}"):
+                    profit = bet['stake'] * (bet['odds'] - 1)
+                    bet_tracker.update_outcome(bet['id'], 'Win', profit)
+                    bankroll_mgr.update_bankroll(bet['stake'], profit)
+                    st.rerun()
+            with col4:
+                if st.button(f"❌ Loss", key=f"loss_{bet['id']}"):
+                    bet_tracker.update_outcome(bet['id'], 'Loss', -bet['stake'])
+                    bankroll_mgr.update_bankroll(bet['stake'], -bet['stake'])
+                    st.rerun()
+    
+    # Show completed bets
+    completed = bets_df[bets_df['outcome'].notna()] if not bets_df.empty else pd.DataFrame()
+    if not completed.empty:
+        st.dataframe(
+            completed[['date', 'sport', 'player', 'stat_type', 'line', 'pick', 'odds', 'stake', 'outcome', 'profit']],
+            use_container_width=True,
+            height=400
+        )
     
     # Add new bet manually
     with st.expander("➕ Add Manual Bet"):
         col1, col2, col3 = st.columns(3)
         with col1:
-            manual_sport = st.selectbox("Sport", ["NBA", "NFL", "MLB", "NHL", "SOCCER", "TENNIS"])
-            manual_player = st.text_input("Player Name")
+            manual_sport = st.selectbox("Sport", ["NBA", "NFL", "MLB", "NHL", "SOCCER", "TENNIS"], key="manual_sport")
+            manual_player = st.text_input("Player Name", key="manual_player")
         with col2:
-            manual_stat = st.selectbox("Stat Type", ["Points", "Rebounds", "Assists", "PRA", "Passing Yds"])
-            manual_line = st.number_input("Line", value=20.5, step=0.5)
+            manual_stat = st.selectbox("Stat Type", ["Points", "Rebounds", "Assists", "PRA", "Passing Yds"], key="manual_stat")
+            manual_line = st.number_input("Line", value=20.5, step=0.5, key="manual_line")
         with col3:
-            manual_pick = st.selectbox("Pick", ["OVER", "UNDER"])
-            manual_odds = st.number_input("Odds (Decimal)", value=2.0, step=0.1)
+            manual_pick = st.selectbox("Pick", ["OVER", "UNDER"], key="manual_pick")
+            manual_odds = st.number_input("Odds (Decimal)", value=2.0, step=0.1, key="manual_odds")
         
         col4, col5, col6 = st.columns(3)
         with col4:
-            manual_stake = st.number_input("Stake ($)", value=10.0, step=5.0)
+            manual_stake = st.number_input("Stake ($)", value=10.0, step=5.0, key="manual_stake")
         with col5:
-            manual_outcome = st.selectbox("Outcome (optional)", ["Pending", "Win", "Loss"])
+            manual_outcome = st.selectbox("Outcome", ["Pending", "Win", "Loss"], key="manual_outcome")
         with col6:
-            manual_notes = st.text_input("Notes")
+            manual_notes = st.text_input("Notes", key="manual_notes")
         
-        if st.button("Save Bet"):
+        if st.button("💾 Save Bet", key="save_bet"):
             bet_id = bet_tracker.add_bet(
                 sport=manual_sport,
                 player=manual_player,
@@ -516,6 +702,7 @@ with tab2:
                     bet_tracker.update_outcome(bet_id, 'Loss', -manual_stake)
             
             st.success("✅ Bet saved!")
+            st.rerun()
 
 # ============================================
 # TAB 3: BANKROLL MANAGER
@@ -543,11 +730,12 @@ with tab3:
     
     col1, col2, col3 = st.columns(3)
     with col1:
-        kelly_odds = st.number_input("Decimal Odds", value=2.0, step=0.1, min_value=1.01)
+        kelly_odds = st.number_input("Decimal Odds", value=2.0, step=0.1, min_value=1.01, key="kelly_odds")
     with col2:
-        kelly_edge = st.number_input("Edge (EV %)", value=5.0, step=1.0) / 100
+        kelly_edge = st.number_input("Edge (EV %)", value=5.0, step=1.0, key="kelly_edge") / 100
     with col3:
-        kelly_fraction = st.selectbox("Kelly Fraction", [0.25, 0.5, 0.75, 1.0], index=0, format_func=lambda x: f"{int(x*100)}% Kelly")
+        kelly_fraction = st.selectbox("Kelly Fraction", [0.25, 0.5, 0.75, 1.0], index=0, 
+                                      format_func=lambda x: f"{int(x*100)}% Kelly", key="kelly_fraction")
     
     stake_info = bankroll_mgr.calculate_stake(kelly_odds, kelly_edge, kelly_fraction)
     
@@ -589,20 +777,17 @@ with tab4:
     st.subheader("⚠️ Bump Risk Detector")
     st.caption("Identify props at risk of being bumped (line movement) by PrizePicks")
     
-    # Load data for bump analysis
     with st.spinner("Analyzing bump risks..."):
         pp_data, market_data = load_data(selected_sport)
         ev_data = calculate_ev(pp_data, market_data)
         
         if not ev_data.empty:
-            # Get bump warnings
             bump_warnings = bump_detector.get_bump_warning(ev_data, threshold=min_ev)
             
-            # Display metrics
             col1, col2, col3 = st.columns(3)
             with col1:
                 high_risk = len([w for w in bump_warnings if w['risk'] == 'HIGH'])
-                st.metric("High Risk Props", high_risk, delta=None, delta_color="inverse")
+                st.metric("High Risk Props", high_risk)
             with col2:
                 medium_risk = len([w for w in bump_warnings if w['risk'] == 'MEDIUM'])
                 st.metric("Medium Risk Props", medium_risk)
@@ -610,11 +795,9 @@ with tab4:
                 low_risk = len([w for w in bump_warnings if w['risk'] == 'LOW'])
                 st.metric("Low Risk Props", low_risk)
             
-            # Display warnings table
             if bump_warnings:
                 warnings_df = pd.DataFrame(bump_warnings)
                 
-                # Color code based on risk
                 def color_risk(val):
                     colors = {'HIGH': 'background-color: #ff4444', 
                              'MEDIUM': 'background-color: #ff8800',
@@ -627,7 +810,6 @@ with tab4:
                     height=400
                 )
                 
-                # Explanation
                 with st.expander("📖 Understanding Bump Risk"):
                     st.markdown("""
                     **What is a bump?**
@@ -653,16 +835,13 @@ with tab5:
     st.subheader("🔄 Arbitrage Scanner")
     st.caption("Find risk-free profit opportunities across props")
     
-    # Load data for arbitrage analysis
     with st.spinner("Scanning for arbitrage opportunities..."):
         pp_data, market_data = load_data(selected_sport)
         ev_data = calculate_ev(pp_data, market_data)
         
         if not ev_data.empty:
-            # Scan for arbitrage
             arb_opportunities = arb_scanner.calculate_arbitrage(ev_data.to_dict('records'))
             
-            # Display metrics
             col1, col2 = st.columns(2)
             with col1:
                 st.metric("Arbitrage Opportunities", len(arb_opportunities))
@@ -671,12 +850,10 @@ with tab5:
                     max_profit = max([o['profit_pct'] for o in arb_opportunities])
                     st.metric("Max Profit", f"{max_profit}%")
             
-            # Display arbitrage opportunities
             if arb_opportunities:
                 arb_df = pd.DataFrame(arb_opportunities)
                 st.dataframe(arb_df, use_container_width=True, height=400)
                 
-                # Show detailed calculation for first opportunity
                 if len(arb_opportunities) > 0:
                     with st.expander("📊 Arbitrage Calculation Example"):
                         arb = arb_opportunities[0]
@@ -695,7 +872,6 @@ with tab5:
             else:
                 st.info("No arbitrage opportunities found at this time")
             
-            # Correlation arbitrage
             st.subheader("🔄 Correlation Arbitrage")
             corr_arb = arb_scanner.find_correlation_arb(ev_data)
             
@@ -714,25 +890,24 @@ with tab6:
     st.subheader("🔔 Smart Alerts")
     st.caption("Get notified when +EV opportunities appear")
     
-    # Alert settings
     with st.expander("⚙️ Alert Settings", expanded=True):
         col1, col2 = st.columns(2)
         with col1:
             alert_sports = st.multiselect("Sports to monitor", 
                 ["NBA", "NFL", "MLB", "NHL", "SOCCER", "TENNIS"],
-                default=["NBA"])
+                default=["NBA"], key="alert_sports")
             
-            alert_threshold = st.slider("EV Threshold %", 1, 15, 5, 1)
+            alert_threshold = st.slider("EV Threshold %", 1, 15, 5, 1, key="alert_threshold")
             
         with col2:
             alert_frequency = st.selectbox("Alert Frequency", 
-                ["Instant", "Hourly Digest", "Daily Digest"], index=0)
+                ["Instant", "Hourly Digest", "Daily Digest"], index=0, key="alert_frequency")
             
             alert_methods = st.multiselect("Alert Methods",
                 ["In-App", "Email", "Push Notification"],
-                default=["In-App"])
+                default=["In-App"], key="alert_methods")
         
-        if st.button("💾 Save Alert Settings"):
+        if st.button("💾 Save Alert Settings", key="save_alert_settings"):
             alert_mgr.update_settings({
                 'sports': alert_sports,
                 'threshold': alert_threshold / 100,
@@ -741,24 +916,23 @@ with tab6:
             })
             st.success("✅ Alert settings saved!")
     
-    # Create custom alert
     st.subheader("➕ Create Custom Alert")
     
     col1, col2, col3 = st.columns(3)
     with col1:
-        alert_player = st.text_input("Player Name (optional)", placeholder="Leave empty for all")
+        alert_player = st.text_input("Player Name (optional)", placeholder="Leave empty for all", key="alert_player")
     with col2:
-        alert_stat = st.selectbox("Stat Type", ["All", "Points", "Rebounds", "Assists", "PRA", "3PM"])
+        alert_stat = st.selectbox("Stat Type", ["All", "Points", "Rebounds", "Assists", "PRA", "3PM"], key="alert_stat")
     with col3:
-        alert_condition = st.selectbox("Condition", ["Any", "OVER", "UNDER"])
+        alert_condition = st.selectbox("Condition", ["Any", "OVER", "UNDER"], key="alert_condition")
     
     col1, col2 = st.columns(2)
     with col1:
-        alert_value = st.number_input("Threshold Value", value=alert_threshold, step=1)
+        alert_value = st.number_input("Threshold Value", value=alert_threshold, step=1, key="alert_value")
     with col2:
-        alert_expiry = st.date_input("Alert Expiry", value=datetime.now() + timedelta(days=7))
+        alert_expiry = st.date_input("Alert Expiry", value=datetime.now() + timedelta(days=7), key="alert_expiry")
     
-    if st.button("➕ Add Custom Alert"):
+    if st.button("➕ Add Custom Alert", key="add_custom_alert"):
         alert_mgr.add_custom_alert(
             player=alert_player if alert_player else None,
             stat_type=alert_stat if alert_stat != "All" else None,
@@ -768,7 +942,6 @@ with tab6:
         )
         st.success("✅ Custom alert created!")
     
-    # Active alerts
     st.subheader("🟢 Active Alerts")
     active_alerts = alert_mgr.get_active_alerts()
     
@@ -776,13 +949,12 @@ with tab6:
         alerts_df = pd.DataFrame(active_alerts)
         st.dataframe(alerts_df, use_container_width=True, height=300)
         
-        if st.button("❌ Clear All Alerts"):
+        if st.button("❌ Clear All Alerts", key="clear_alerts"):
             alert_mgr.clear_all_alerts()
             st.rerun()
     else:
         st.info("No active alerts")
     
-    # Alert history
     with st.expander("📜 Alert History"):
         alert_history = bet_tracker.get_alerts(days=7)
         
@@ -792,8 +964,7 @@ with tab6:
         else:
             st.info("No alerts triggered in the last 7 days")
     
-    # Test alert
-    if st.button("🔔 Test Alert"):
+    if st.button("🔔 Test Alert", key="test_alert"):
         alert_mgr.send_test_alert()
         st.success("✅ Test alert sent!")
 
@@ -810,35 +981,32 @@ with tab7:
     else:
         # Create sample data for preview
         sample_ev = pd.DataFrame({
-            'player': ['LeBron James', 'Stephen Curry', 'Giannis'],
-            'stat_type': ['Points', '3PM', 'Rebounds'],
-            'line': [25.5, 3.5, 12.5],
-            'ev': [0.08, 0.07, 0.06],
-            'is_positive': [True, True, True]
+            'player': ['LeBron James', 'Stephen Curry', 'Giannis Antetokounmpo', 'Luka Doncic', 'Joel Embiid'],
+            'stat_type': ['Points', '3PM', 'Rebounds', 'PRA', 'Points'],
+            'line': [25.5, 3.5, 12.5, 44.5, 31.5],
+            'ev': [0.08, 0.07, 0.06, 0.055, 0.05],
+            'is_positive': [True, True, True, True, True]
         })
-        sample_pp = pd.DataFrame({'player': ['LeBron', 'Curry', 'Giannis']})
+        sample_pp = pd.DataFrame({'player': ['LeBron', 'Curry', 'Giannis', 'Luka', 'Embiid']})
         ios_widget.generate_widget_data(sample_ev, sample_pp)
     
-    # Widget preview
     st.markdown("### Widget Preview")
     ios_widget.render_widget_preview()
     
-    # Widget customization
     with st.expander("⚙️ Widget Settings"):
         col1, col2 = st.columns(2)
         with col1:
             widget_sport = st.selectbox("Sport for widget", 
-                ["NBA", "NFL", "MLB", "NHL", "SOCCER", "TENNIS"], index=0)
-            widget_size = st.selectbox("Widget size", ["Small", "Medium", "Large"], index=1)
+                ["NBA", "NFL", "MLB", "NHL", "SOCCER", "TENNIS"], index=0, key="widget_sport")
+            widget_size = st.selectbox("Widget size", ["Small", "Medium", "Large"], index=1, key="widget_size")
         with col2:
             widget_refresh = st.selectbox("Refresh rate", 
-                ["Every hour", "Every 2 hours", "Every 4 hours", "Manual"], index=1)
-            widget_dark = st.checkbox("Use dark mode", value=dark_mode)
+                ["Every hour", "Every 2 hours", "Every 4 hours", "Manual"], index=1, key="widget_refresh")
+            widget_dark = st.checkbox("Use dark mode", value=dark_mode, key="widget_dark")
         
-        if st.button("💾 Update Widget"):
+        if st.button("💾 Update Widget", key="update_widget"):
             st.success("✅ Widget settings saved!")
     
-    # Widget installation instructions
     with st.expander("📖 How to Add Widget to iPad"):
         st.markdown("""
         ### Adding the Widget to Your iPad
@@ -861,104 +1029,50 @@ with tab7:
         The widget updates automatically based on your refresh settings.
         """)
     
-    # Share widget
-    st.subheader("📤 Share Widget with Friends")
-    
-    share_message = """
-    Check out my PrizePicks +EV widget! It shows the best value picks in real-time.
-    Download the app at: https://prizepicks-ipad-app.streamlit.app
-    """
-    
     col1, col2, col3 = st.columns(3)
     with col1:
-        if st.button("📱 Share to Messages"):
+        if st.button("📱 Share to Messages", key="share_messages"):
             st.info("Sharing via Messages...")
     with col2:
-        if st.button("📧 Share via Email"):
+        if st.button("📧 Share via Email", key="share_email"):
             st.info("Opening email...")
     with col3:
-        if st.button("🔗 Copy Link"):
+        if st.button("🔗 Copy Link", key="copy_link"):
             st.code("https://prizepicks-ipad-app.streamlit.app")
             st.success("✅ Link copied!")
-    
-    # Widget analytics
-    with st.expander("📊 Widget Analytics"):
-        st.markdown("""
-        **Widget Performance:**
-        - **Daily views:** 0
-        - **Clicks to app:** 0
-        - **Most viewed sport:** NBA
-        
-        *Analytics will appear once widget is installed and used.*
-        """)
 
 # ============================================
-# WELCOME SCREEN (when app first loads)
+# WELCOME SCREEN
 # ============================================
-if not analyze_clicked:
+if not analyze_clicked and 'analyze_clicked' not in locals():
     st.divider()
     
-    # Welcome message
     st.markdown("""
     ### 👆 Welcome to PrizePicks +EV Pro!
     
     This professional betting tool helps you:
     """)
     
-    # Feature cards in 4 columns
     col1, col2, col3, col4 = st.columns(4)
-    
     with col1:
-        st.info("""
-        **🎯 +EV Picks**
-        Find mathematically profitable bets
-        """)
-    
+        st.info("**🎯 +EV Picks**\nFind mathematically profitable bets")
     with col2:
-        st.info("""
-        **📊 Bet Tracking**
-        Track performance and ROI
-        """)
-    
+        st.info("**📊 Bet Tracking**\nTrack performance and ROI")
     with col3:
-        st.info("""
-        **💰 Bankroll Mgmt**
-        Kelly Criterion staking
-        """)
-    
+        st.info("**💰 Bankroll Mgmt**\nKelly Criterion staking")
     with col4:
-        st.info("""
-        **⚠️ Bump Detection**
-        Avoid line movements
-        """)
+        st.info("**⚠️ Bump Detection**\nAvoid line movements")
     
     col5, col6, col7, col8 = st.columns(4)
-    
     with col5:
-        st.info("""
-        **🔄 Arbitrage**
-        Risk-free opportunities
-        """)
-    
+        st.info("**🔄 Arbitrage**\nRisk-free opportunities")
     with col6:
-        st.info("""
-        **🔔 Smart Alerts**
-        Never miss a +EV pick
-        """)
-    
+        st.info("**🔔 Smart Alerts**\nNever miss a +EV pick")
     with col7:
-        st.info("""
-        **📱 iOS Widget**
-        Picks on your home screen
-        """)
-    
+        st.info("**📱 iOS Widget**\nPicks on your home screen")
     with col8:
-        st.info("""
-        **🔍 Advanced Filters**
-        Customize your search
-        """)
+        st.info("**🔍 Advanced Filters**\nCustomize your search")
     
-    # Quick start guide
     with st.expander("📖 Quick Start Guide"):
         st.markdown("""
         **Get started in 3 steps:**
@@ -967,84 +1081,17 @@ if not analyze_clicked:
         2. **Adjust EV threshold** (5% recommended for beginners)
         3. **Click "FIND BEST PARLAY"** to see opportunities
         
-        **Pro Features:**
-        - Track your bets in the Bet Tracker tab
-        - Set up bankroll management in Bankroll tab
-        - Create alerts for your favorite players
-        - Add the iOS widget to your home screen
+        **New Features Added:**
+        - 📈 **Enhanced Analytics** - Win rates by sport, player performance
+        - 📤 **Export Data** - Download your bet history as CSV
+        - 🔗 **Share Feature** - Copy parlays to share with friends
         
         **Pro Tip:** Start with 1% of your bankroll per bet and use quarter Kelly for optimal growth.
         """)
 
 # ============================================
-# Initialize missing Alert Manager class
+# Initialize AlertManager if not already
 # ============================================
-class AlertManager:
-    def __init__(self):
-        self.settings = {
-            'sports': ['NBA'],
-            'threshold': 0.05,
-            'frequency': 'Instant',
-            'methods': ['In-App']
-        }
-        self.custom_alerts = []
-        self.conn = sqlite3.connect('betting_history.db', check_same_thread=False)
-        self.create_alerts_table()
-    
-    def create_alerts_table(self):
-        cursor = self.conn.cursor()
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS custom_alerts (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                player TEXT,
-                stat_type TEXT,
-                condition TEXT,
-                threshold REAL,
-                expiry TEXT,
-                active INTEGER DEFAULT 1,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
-        self.conn.commit()
-    
-    def update_settings(self, settings):
-        self.settings.update(settings)
-    
-    def add_custom_alert(self, player, stat_type, condition, threshold, expiry):
-        cursor = self.conn.cursor()
-        cursor.execute('''
-            INSERT INTO custom_alerts (player, stat_type, condition, threshold, expiry, active)
-            VALUES (?, ?, ?, ?, ?, 1)
-        ''', (player, stat_type, condition, threshold, expiry.isoformat()))
-        self.conn.commit()
-    
-    def get_active_alerts(self):
-        cursor = self.conn.cursor()
-        cursor.execute('''
-            SELECT * FROM custom_alerts WHERE active = 1 AND date(expiry) >= date('now')
-        ''')
-        return cursor.fetchall()
-    
-    def clear_all_alerts(self):
-        cursor = self.conn.cursor()
-        cursor.execute('UPDATE custom_alerts SET active = 0')
-        self.conn.commit()
-    
-    def add_alert(self, sport, player, stat_type, threshold, condition):
-        # Log alert to database
-        cursor = self.conn.cursor()
-        cursor.execute('''
-            INSERT INTO alerts (date, sport, player, stat_type, ev, message)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ''', (datetime.now().isoformat(), sport, player, stat_type, threshold, 
-              f"Alert set for {player} {stat_type} {condition} {threshold:.1%}"))
-        self.conn.commit()
-    
-    def send_test_alert(self):
-        # Simulate sending a test alert
-        pass
-
-# Initialize alert manager if not already
 if 'alert_mgr' not in locals():
     alert_mgr = AlertManager()
 
