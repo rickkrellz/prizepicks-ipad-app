@@ -804,6 +804,21 @@ with tab7:
     st.subheader("📱 iOS Widget Preview")
     st.caption("See how your top picks will appear on your iPad home screen")
     
+    # Generate widget data first
+    if 'display_positive_ev' in locals() and not display_positive_ev.empty:
+        ios_widget.generate_widget_data(display_positive_ev, pp_data)
+    else:
+        # Create sample data for preview
+        sample_ev = pd.DataFrame({
+            'player': ['LeBron James', 'Stephen Curry', 'Giannis'],
+            'stat_type': ['Points', '3PM', 'Rebounds'],
+            'line': [25.5, 3.5, 12.5],
+            'ev': [0.08, 0.07, 0.06],
+            'is_positive': [True, True, True]
+        })
+        sample_pp = pd.DataFrame({'player': ['LeBron', 'Curry', 'Giannis']})
+        ios_widget.generate_widget_data(sample_ev, sample_pp)
+    
     # Widget preview
     st.markdown("### Widget Preview")
     ios_widget.render_widget_preview()
