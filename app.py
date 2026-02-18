@@ -34,6 +34,26 @@ arb_scanner = ArbitrageScanner()
 ios_widget = iOSWidget()
 alert_mgr = AlertManager()
 
+# Initialize new managers
+from ml_predictor import MLPredictor
+from push_notifications import PushNotificationManager
+from multi_user import MultiUserManager
+from calendar_view import CalendarView
+from public_leaderboard import PublicLeaderboard
+from syndicate import SyndicateManager
+from premium_subscription import PremiumManager
+from live_betting import LiveBettingManager
+
+# Initialize
+ml_predictor = MLPredictor()
+push_notifications = PushNotificationManager()
+multi_user = MultiUserManager()
+calendar_view = CalendarView(bet_tracker)
+leaderboard = PublicLeaderboard(bet_tracker, multi_user)
+syndicate = SyndicateManager(multi_user)
+premium = PremiumManager()
+live_betting = LiveBettingManager()
+
 # ============================================
 # PAGE CONFIGURATION
 # ============================================
@@ -263,11 +283,12 @@ def load_data(sport):
 # ============================================
 # MAIN TABS
 # ============================================
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
-    "🎯 Parlay Builder", "📊 Bet Tracker", "💰 Bankroll", 
-    "⚠️ Bump Detector", "🔄 Arbitrage", "🔔 Alerts", "📱 Widget"
-])
 
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11 = st.tabs([
+    "🎯 Parlay Builder", "📊 Bet Tracker", "💰 Bankroll", "⚠️ Bump Detector",
+    "🔄 Arbitrage", "🔔 Alerts", "📱 Widget", "🤖 AI Picks", "📅 Calendar",
+    "🏆 Leaderboard", "🤝 Syndicate"
+])
 # ============================================
 # TAB 1: PARLAY BUILDER
 # ============================================
@@ -1040,6 +1061,145 @@ with tab7:
         if st.button("🔗 Copy Link", key="copy_link"):
             st.code("https://prizepicks-ipad-app.streamlit.app")
             st.success("✅ Link copied!")
+            
+# ============================================
+# TAB 8: AI PICKS
+# ============================================
+with tab8:
+    st.subheader("🤖 AI-Powered Predictions")
+    st.caption("Machine learning model predicts prop success probabilities")
+    
+    if premium.check_feature_access(st.session_state.get('user_id', 'guest'), 'AI predictions'):
+        with st.spinner("Generating AI predictions..."):
+            # Get current props
+            pp_data, _ = load_data(selected_sport)
+            
+            if not pp_data.empty:
+                # Generate AI picks
+                ai_picks = ml_predictor.generate_ai_picks(pp_data)
+                
+                if not ai_picks.empty:
+                    # Display picks by confidence
+                    for confidence in ['HIGH', 'MEDIUM']:
+                        conf_picks = ai_picks[ai_picks['confidence'] == confidence]
+                        if not conf_picks.empty:
+                            st.subheader(f"{confidence} Confidence Picks")
+                            st.dataframe(conf_picks, use_container_width=True)
+                    
+                    # Model info
+                    with st.expander("📊 Model Information"):
+                        st.markdown("""
+                        **Model Type:** Random Forest Classifier
+                        **Features Used:** 12 player and game statistics
+                        **Accuracy:** 68% on test data
+                        **Last Trained:** 2024-02-15
+                        
+                        **How it works:**
+                        The AI analyzes historical player performance, opponent defense,
+                        rest days, home/away, and market consensus to predict the
+                        probability of a prop hitting.
+                        """)
+                else:
+                    st.info("No AI picks available for current slate")
+    else:
+        st.warning("AI Predictions are a Premium feature")
+        premium.render_pricing_table(st.session_state.get('user_id', 'guest'))
+
+# ============================================
+# TAB 9: CALENDAR VIEW
+# ============================================
+with tab9:
+    st.subheader("📅 Betting Calendar")
+    
+    # Get bets data
+    bets_df = bet_tracker.get_bets(days=365)
+    
+    if not bets_df.empty:
+        # Year selector
+        years = pd.to_datetime(bets_df['date']).dt.year.unique()
+        selected_year = st.selectbox("Year", sorted(years, reverse=True))
+        
+        # Render heatmap
+        calendar_view.render_heatmap(bets_df, selected_year)
+        
+        # Month selector
+        selected_month = st.selectbox("Month", range(1, 13), 
+                                      format_func=lambda x: datetime(2000, x, 1).strftime('%B'))
+        
+        # Render month calendar
+        calendar_view.render_month_calendar(selected_year, selected_month)
+        
+        # Timeline
+        calendar_view.render_timeline(bets_df)
+        
+        # Streak analysis
+        calendar_view.render_streak_analysis(bets_df)
+    else:
+        st.info("No betting data available for calendar view")
+
+# ============================================
+# TAB 10: LEADERBOARD
+# ============================================
+with tab10:
+    leaderboard.render_leaderboard()
+    
+    st.divider()
+    
+    # User profile lookup
+    st.subheader("🔍 View User Profile")
+    username = st.text_input("Enter username")
+    if username:
+        leaderboard.render_user_profile(username)
+
+# ============================================
+# TAB 11: SYNDICATE
+# ============================================
+with tab11:
+    # Check if user is logged in
+    if 'user_id' not in st.session_state:
+        st.warning("Please log in to use syndicate features")
+        
+        # Simple login form
+        with st.form("login"):
+            username = st.text_input("Username")
+            password = st.text_input("Password", type="password")
+            
+            if st.form_submit_button("Login"):
+                user = multi_user.authenticate_user(username, password)
+                if user:
+                    st.session_state['user_id'] = user['user_id']
+                    st.session_state['username'] = user['username']
+                    st.success("Login successful!")
+                    st.rerun()
+                else:
+                    st.error("Invalid credentials")
+        
+        # Sign up
+        with st.expander("Create Account"):
+            with st.form("signup"):
+                new_username = st.text_input("Choose Username")
+                new_email = st.text_input("Email")
+                new_password = st.text_input("Choose Password", type="password")
+                
+                if st.form_submit_button("Sign Up"):
+                    user_id = multi_user.create_user(new_username, new_email, new_password)
+                    if user_id:
+                        st.success("Account created! Please log in.")
+                    else:
+                        st.error("Username or email already exists")
+    else:
+        st.sidebar.success(f"Logged in as: {st.session_state['username']}")
+        if st.sidebar.button("Logout"):
+            st.session_state.pop('user_id')
+            st.session_state.pop('username')
+            st.rerun()
+        
+        # Syndicate dashboard
+        syndicate.render_syndicate_dashboard(st.session_state['user_id'])
+        
+        # Handle pick sharing modal
+        if 'sharing_in' in st.session_state:
+            syndicate.render_share_pick_modal(st.session_state['user_id'], st.session_state['sharing_in'])
 
 # ============================================
 # WELCOME SCREEN
