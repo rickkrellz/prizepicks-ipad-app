@@ -1,0 +1,998 @@
+[
+  {
+    "player": "Seamus Power",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Patrick Cantlay",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Patrick Cantlay",
+    "line": 12.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Patrick Cantlay",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Kristoffer Reitan",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Kristoffer Reitan",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Kristoffer Reitan",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Rico Hoey",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Daniel Berger",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Daniel Berger",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Rico Hoey",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Eric Cole",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Stephan Jaeger",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "J.T. Poston",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "J.T. Poston",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Scottie Scheffler",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Si Woo Kim",
+    "line": 70.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Scottie Scheffler",
+    "line": 69.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Scottie Scheffler",
+    "line": 12.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Si Woo Kim",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Scottie Scheffler",
+    "line": 10.0,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Scottie Scheffler",
+    "line": 5.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ricky Castillo",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Nicolas Echavarria",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Nicolas Echavarria",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Joe Highsmith",
+    "line": 73.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Rory McIlroy",
+    "line": 70.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Rory McIlroy",
+    "line": 12.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Rory McIlroy",
+    "line": 5.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Chris Kirk",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Nicolai Hojgaard",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Tony Finau",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Robert MacIntyre",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Robert MacIntyre",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Rickie Fowler",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Min Woo Lee",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Bud Cauley",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Max McGreevy",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Bud Cauley",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Max McGreevy",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sam Burns",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Chris Gotterup",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sam Burns",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Chris Gotterup",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sam Burns",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Chris Gotterup",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Russell Henley",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Adam Scott",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Nick Taylor",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Adam Scott",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Nick Taylor",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Viktor Hovland",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Taylor Pendrith",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sam Stevens",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Taylor Pendrith",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sam Stevens",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Akshay Bhatia",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Max Homa",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Matti Schmid",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Wyndham Clark",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "J.J. Spaun",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "J.J. Spaun",
+    "line": 10.0,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Wyndham Clark",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "J.J. Spaun",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Taylor Moore",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Keegan Bradley",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Keegan Bradley",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Keegan Bradley",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Brooks Koepka",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Akshay Bhatia",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Brooks Koepka",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Akshay Bhatia",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Brooks Koepka",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Alex Noren",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Min Woo Lee",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Alex Noren",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Min Woo Lee",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Alex Noren",
+    "line": 10.5,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Min Woo Lee",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Alex Noren",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Rickie Fowler",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Hideki Matsuyama",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Hideki Matsuyama",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Hideki Matsuyama",
+    "line": 10.5,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Rickie Fowler",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Hideki Matsuyama",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Andrew Putnam",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ryan Gerard",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ryan Gerard",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Xander Schauffele",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Jordan Spieth",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Jordan Spieth",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sahith Theegala",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sahith Theegala",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Jason Day",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Justin Rose",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Justin Rose",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Jason Day",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Justin Rose",
+    "line": 10.0,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Jason Day",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Justin Rose",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Tommy Fleetwood",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ryo Hisatsune",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ryo Hisatsune",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Cameron Young",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Patrick Rodgers",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Keith Mitchell",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Keith Mitchell",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Patrick Rodgers",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Matt Fitzpatrick",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Matt Fitzpatrick",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Russell Henley",
+    "line": 70.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Matt Fitzpatrick",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Russell Henley",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Matt Fitzpatrick",
+    "line": 10.5,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Russell Henley",
+    "line": 10.5,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Matt Fitzpatrick",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Russell Henley",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Brian Harman",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Viktor Hovland",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Viktor Hovland",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Viktor Hovland",
+    "line": 10.0,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Viktor Hovland",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Brian Harman",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Michael Thorbjornsen",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Tommy Fleetwood",
+    "line": 70.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Tommy Fleetwood",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Michael Thorbjornsen",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Tommy Fleetwood",
+    "line": 10.5,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Tommy Fleetwood",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Michael Thorbjornsen",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Austin Smotherman",
+    "line": 72.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Maverick McNealy",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Maverick McNealy",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Maverick McNealy",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Austin Smotherman",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Lee Hodges",
+    "line": 72.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Jacob Bridgeman",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Jacob Bridgeman",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Lee Hodges",
+    "line": 11.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Jacob Bridgeman",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Lee Hodges",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ludvig Aberg",
+    "line": 0.5,
+    "stat_type": "Birdies or Better Matchup",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sepp Straka",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Justin Thomas",
+    "line": 71.0,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sepp Straka",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Justin Thomas",
+    "line": 10.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sepp Straka",
+    "line": 10.0,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Justin Thomas",
+    "line": 9.5,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Justin Thomas",
+    "line": 5.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Sepp Straka",
+    "line": 4.5,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Corey Conners",
+    "line": 71.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Cameron Young",
+    "line": 70.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Corey Conners",
+    "line": 12.0,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Cameron Young",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Corey Conners",
+    "line": 10.5,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Cameron Young",
+    "line": 10.0,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Cameron Young",
+    "line": 5.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Corey Conners",
+    "line": 4.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ludvig Aberg",
+    "line": 70.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Xander Schauffele",
+    "line": 70.5,
+    "stat_type": "Strokes",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ludvig Aberg",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Xander Schauffele",
+    "line": 11.5,
+    "stat_type": "Greens In Regulation",
+    "sport": "MLB"
+  },
+  {
+    "player": "Xander Schauffele",
+    "line": 10.0,
+    "stat_type": "Pars",
+    "sport": "MLB"
+  },
+  {
+    "player": "Ludvig Aberg",
+    "line": 5.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  },
+  {
+    "player": "Xander Schauffele",
+    "line": 5.0,
+    "stat_type": "Birdies Or Better",
+    "sport": "MLB"
+  }
+]
